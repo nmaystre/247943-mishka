@@ -5,8 +5,126 @@
     <title>HTML Academy: Мишка</title>
   </head>
   <body>
-
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">Продвинутый HTML и CSS</a>».</p>
+    <header class="page-header">
+      <h1 class="visually-hidden">Вязаные сувениры "Mishka"</h1>
+      <div class="header-logo"> <!--прописываю хэдер потому что, судя по стайлгайду, на десктопе в футере будет другой логотип -->
+        <img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka">
+      </div>
+      <nav class="main-nav main-nav--closed min-nav--nojs">
+        <button class="main-nav__toggle" type="button">Открыть меню</button>
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__items">
+            <li class="main-nav__item">
+              <a href="#">Каталог товаров</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#">Вязание на заказ</a>
+            </li>
+            <li class="main-nav__item">
+              <form class="main-nav__search">
+                <input type="text" name="search" placeholder="Поиск по сайту" required>
+                <button type="submit"></button>
+              </form>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__cart" href="#">
+                Корзина: <span>пока пуста</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main-page">
+      <section class="about">
+        <h2 class="main_subtitle">Милые штучки ручной работы для дома</h2>
+        <a href="#" class="about__catalog about__catalog-decor">Предметы интерьера</a>
+        <a href="#" class="about__catalog about__catalog-toy">Детские игрушки</a>
+      </section>
+      <section class="item-of-week"> <!-- а не лучше ли было этот блок сделать article? -->
+        <h2 class="item-of-week__title">Вязаные корзинки</h2>
+        <h3 class="item-of-week__period">Товар недели</h3>
+        <p class="item-of-week__description">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.</p>
+        <table class="item-of-week__about">
+          <tr>
+            <td class="item-of-week__value">Цвет:</td>
+            <td class="item-of-week__field">«Тиффани»/серый</td>
+          </tr>
+          <tr>
+            <td class="item-of-week__value">Диаметр:</td>
+            <td class="item-of-week__field">25 см</td>
+          </tr>
+          <tr>
+            <td class="item-of-week__value">Высота:</td>
+            <td class="item-of-week__field">15 см</td>
+          </tr>
+        </table>
+        <div class="item-of-week__wrapper">
+          <img class="item-of-week__pic" src="http://placehold.it/320x260"  width="320" height="260" alt="Вязаные корзинки">
+          <p class="item-of-week__price">Цена: 990 руб.</p>
+          <a href="#" class="button item-of-week__buy">Заказать</a>
+        </div>
+      </section>
+      <section class="features">
+        <h2 class="main_subtitle">Коротко о нас:</h2>
+        <p class="features__item features__item--eco">Экологически чистые материалы</p>
+        <p class="features__item features__item--price">Скандинавский стиль по российской цене</p>
+        <p class="features__item features__item--like">Увеличивает лайки на фотографиях</p>
+        <p class="features__item features__item--cute">Связано вручную с  любовью и умилением</p>
+        <p class="features__item features__item--local">Поддержка отечественного производителя</p>
+        <p class="features__item features__item--present">Поставляется в  подарочной упаковке</p>
+      </section>
+      <section class="reviews">
+        <h2 class="main_subtitle">Отзывы</h2>
+        <div class="review__wrapper">
+          <div class="review_single"> <!-- или лучше использовать blockquote? -->
+            <p class="review__text">
+              Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек.
+              В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
+            </p>
+            <p class="review__author">Анастасия Красильникова</p>
+            <p class="review__from">@misssssiskras</p>
+          </div>
+        </div>
+        <div class="paginator__wrapper">
+          <a href="#" class="paginator paginator--prev">Предыдущий отзыв</a>
+          <a href="#" class="paginator paginator--next">Следующий отзыв</a>
+        </div>
+        <a href="#" class="button review__write">Написать</a>
+      </section>
+      <section class="contacts">
+        <h2 class="main_subtitle">Контакты</h2>
+        <table class="contact__info">
+          <tr>
+            <td class="contact__value">email:</td>
+            <td class="contact__field"><a href="#">info@mimimishkashop.ru</a></td>
+          </tr>
+          <tr>
+            <td class="contact__value">адрес:</td>
+            <td class="contact__field">г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101</td>
+          </tr>
+        </table>
+        <div class="contact__map">
+          <img class="contact__map__pic" src="http://placehold.it/320x260"  width="320" height="460" alt="Как нас найти">
+        </div>
+        <a href="#" class="button contact__write">Напишите нам</a>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <section class="socials">
+        <a href="#" class="socials__link socials__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
+        <a href="#" class="socials__link socials__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
+        <a href="#" class="socials__link socials__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
+      </section>
+      <section class="academy">
+        <p>
+          Разработано
+          <a href="#">в HTML Academy
+            <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
+          </a>
+        </p>
+      </section>
+    </footer>
 
   </body>
 </html>

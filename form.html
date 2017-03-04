@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Мишка</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 class="visually-hidden">Вязаные сувениры "Mishka"</h1>
+      <div class="header-logo"> <!--прописываю хэдер потому что, судя по стайлгайду, на десктопе в футере будет другой логотип -->
+        <img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka">
+      </div>
+      <nav class="main-nav main-nav--closed min-nav--nojs">
+        <button class="main-nav__toggle" type="button">Открыть меню</button>
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__items">
+            <li class="main-nav__item">
+              <a href="#">Каталог товаров</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#">Вязание на заказ</a>
+            </li>
+            <li class="main-nav__item">
+              <form class="main-nav__search">
+                <input type="text" name="search" placeholder="Поиск по сайту" required>
+                <button type="submit"></button>
+              </form>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__cart" href="#">
+                Корзина: <span>пока пуста</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main-order">
+      <h2 class="main-title">Вязание на заказ</h2>
+      <p class="order-description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
+      <form action="https://echo.htmlacademy.ru/" method="get">
+        <fieldset class="order-block">
+          <legend class="order-block__name order-block__name--type">Тип</legend>
+          <label class="order-block__item order-block__item--type"><input type="radio" name="type" value="accessorise" checked>Аксессуар для интерьера</label>
+          <label class="order-block__item order-block__item--type"><input type="radio" name="type" value="toy">Детская игрушка</label>
+        </fieldset>
+        <fieldset class="order-block">
+          <legend class="order-block__name order-block__name--color">Цвет</legend>
+          <label class="order-block__item order-block__item--color"><input type="checkbox" name="color1" value="white" checked>Белый</label>
+          <label class="order-block__item order-block__item--color"><input type="checkbox" name="color2" value="gray"checked>Серый</label>
+          <label class="order-block__item order-block__item--color"><input type="checkbox" name="color3" value="tiffany">«Тиффани»</label>
+          <label class="order-block__item order-block__item--color"><input type="checkbox" name="color4" value="black">Черный</label>
+          <label class="order-block__item order-block__item--color"><input type="checkbox" name="color5" value="pink">Розовый</label>
+          <label class="order-block__item order-block__item--color"><input type="checkbox" name="color6" value="orange">Оранжевый</label>
+        </fieldset>
+        <fieldset class="order-block">
+          <legend class="order-block__name order-block__name--client">ФИО</legend>
+          <label class="order-block__item order-block__item--client">
+            Ваше имя
+            <input class="order-block__field order-block__field--required" type="text" placeholder="Введите ваше имя" name="fname"	required>
+          </label>
+          <label class="order-block__item order-block__item--client">
+            Фамилия
+            <input class="order-block__field order-block__field--required" type="text" placeholder="Укажите фамилию" name="lname" required>
+          </label>
+          <label class="order-block__item order-block__item--client" name="mname">
+            Отчество
+            <input type="text" placeholder="Отчество, если желаете">
+          </label>
+        </fieldset>
+        <fieldset class="order-block">
+            <legend class="order-block__name order-block__name--mobile">Тел</legend>
+              <input class="order-block__field order-block__field--required" type="tel" placeholder="+7 XXX XXX XX XX" name="mobile" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+              <!-- не могу понять почему pattern не срабатывает -->
+        </fieldset>
+        <fieldset class="order-block">
+            <legend class="order-block__name order-block__name--email">Email</legend>
+              <input class="order-block__field order-block__field--required" type="email" placeholder="Ваш Email" name="email" required>
+        </fieldset>
+        <fieldset class="order-block">
+            <legend class="order-block__name order-block__name--comment">Доп</legend>
+            <textarea name="text" rows="6" cols="30">Опишите все ваши пожелания к заказу</textarea>
+        </fieldset>
+        <p class="order-note"><sup>*</sup>Поля обязательны для заполнения</p>
+        <button type="submit" class="button order__submit">Отправить заказ</button>
+      </form>
+    </main>
+    <footer class="page-footer">
+      <section class="socials">
+        <a href="#" class="socials__link socials__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
+        <a href="#" class="socials__link socials__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
+        <a href="#" class="socials__link socials__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
+      </section>
+      <section class="academy">
+        <p>
+          Разработано
+          <a href="#">в HTML Academy
+            <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
+          </a>
+        </p>
+      </section>
+    </footer>
+
+  </body>
+</html>
