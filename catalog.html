@@ -7,7 +7,7 @@
   <body>
     <header class="page-header">
       <div class="logo">
-        <img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka">
+        <a href="index.html"><img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka"></a>
       </div>
       <nav class="main-nav main-nav--closed min-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
@@ -16,7 +16,7 @@
             <a href="#" class="main-nav__link">Каталог товаров</a>
           </li>
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Вязание на заказ</a>
+            <a href="form.html" class="main-nav__link">Вязание на заказ</a>
           </li>
           <li class="main-nav__item">
             <form class="main-nav__search">
@@ -32,7 +32,7 @@
         </ul>
       </nav>
       <div class="intro">
-        <h1>Каталог товаров</h1>
+        <h1 class="intro__title">Каталог товаров</h1>
       </div>
     </header>
 
@@ -103,19 +103,36 @@
       </section>
     </main>
     <footer class="page-footer">
-      <section class="social">
-        <a href="#" class="social__link social__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
-        <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
-        <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
-      </section>
-      <section class="copyright">
-        <p>
-          Разработано
-          <a href="#" class="copyright__link">в HTML Academy
-            <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
-          </a>
-        </p>
-      </section>
+      <div class="page-footer__inner">
+        <section class="social">
+          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
+          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
+          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
+        </section>
+        <section class="copyright">
+          <p>
+            Разработано
+            <a href="#" class="copyright__link">в HTML Academy
+              <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
+            </a>
+          </p>
+        </section>
+      </div>
     </footer>
+    <section class="modal visually-hidden">
+        <div class="modal__inner">
+          <h3 class="modal__title">Добавить в корзину</h3>
+          <b>Выберите размер</b>
+          <form class="modal-form" action="https://echo.htmlacademy.ru/" method="get">
+            <input type="radio" id="smallsize" name="size" value="small" checked>
+            <label for="smallsize" class="modal-form__item">S</label>
+            <input type="radio" id="mediumsize" name="size" value="medium">
+            <label for="mediumsize" class="modal-form__item">M</label>
+            <input type="radio" id="largesize" name="size" value="large">
+            <label for="largesize" class="modal-form__item">L</label>
+            <button type="submit" class="modal-form__btn btn">Добавить</button>
+          </form>
+        </div>
+    </section>
   </body>
 </html>

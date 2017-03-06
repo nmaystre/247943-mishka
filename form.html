@@ -7,13 +7,13 @@
   <body>
     <header class="page-header">
       <div class="logo">
-        <img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka">
+        <a href="index.html"><img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka"></a>
       </div>
       <nav class="main-nav main-nav--closed min-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
         <ul class="main-nav__list">
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Каталог товаров</a>
+            <a href="catalog.html" class="main-nav__link">Каталог товаров</a>
           </li>
           <li class="main-nav__item">
             <a href="#" class="main-nav__link">Вязание на заказ</a>
@@ -32,7 +32,7 @@
         </ul>
       </nav>
       <div class="intro">
-        <h1>Вязание на заказ</h1>
+        <h1 class="intro__title">Вязание на заказ</h1>
       </div>
     </header>
     <main class="main-order">
@@ -42,10 +42,10 @@
           <div class="order-form__inner">
             <legend class="order-form__title order-form__title--type">Тип</legend>
             <div class="order-form__group">
-              <input type="radio" id="type1" name="type" value="accessorise" checked>
-              <label for="type1" class="order-block__item">Аксессуар для интерьера</label>
-              <input type="radio" id="type2" name="type" value="toy">
-              <label for="type2" class="order-block__item">Детская игрушка</label>
+              <input type="radio" id="typeaccessorise" name="type" value="accessorise" checked>
+              <label for="typeaccessorise" class="order-block__item">Аксессуар для интерьера</label>
+              <input type="radio" id="typetoy" name="type" value="toy">
+              <label for="typetoy" class="order-block__item">Детская игрушка</label>
             </div>
           </div>
         </fieldset>
@@ -53,17 +53,17 @@
           <div class="order-form__inner">
             <legend class="order-form__title order-form__title--color">Цвет</legend>
             <div class="order-form__group">
-              <input type="checkbox" id="colorwhite" name="color1" value="white" checked>
+              <input type="checkbox" id="colorwhite" name="colorwhite" value="white" checked>
               <label for="colorwhite" class="order-block__item">Белый</label>
-              <input type="checkbox" id="colorgray" name="color2" value="gray" checked>
+              <input type="checkbox" id="colorgray" name="colorgray" value="gray" checked>
               <label for="colorgray" class="order-block__item">Серый</label>
-              <input type="checkbox" id="colortiffany" name="color3" value="tiffany">
+              <input type="checkbox" id="colortiffany" name="colortiffany" value="tiffany">
               <label for="colortiffany" class="order-block__item">«Тиффани»</label>
-              <input type="checkbox" id="colorblack" name="color4" value="black">
+              <input type="checkbox" id="colorblack" name="colorblack" value="black">
               <label for="colorblack" class="order-block__item">Черный</label>
-              <input type="checkbox" id="colorpink" name="color5" value="pink">
+              <input type="checkbox" id="colorpink" name="colorpink" value="pink">
               <label for="colorpink" class="order-block__item">Розовый</label>
-              <input type="checkbox" id="colororange" name="color6" value="orange">
+              <input type="checkbox" id="colororange" name="colororange" value="orange">
               <label for="colororange" class="order-block__item">Оранжевый</label>
             </div>
           </div>
@@ -104,19 +104,21 @@
       </form>
     </main>
     <footer class="page-footer">
-      <section class="social">
-        <a href="#" class="social__link social__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
-        <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
-        <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
-      </section>
-      <section class="copyright">
-        <p>
-          Разработано
-          <a href="#" class="copyright__link">в HTML Academy
-            <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
-          </a>
-        </p>
-      </section>
+      <div class="page-footer__inner">
+        <section class="social">
+          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
+          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
+          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
+        </section>
+        <section class="copyright">
+          <p>
+            Разработано
+            <a href="#" class="copyright__link">в HTML Academy
+              <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
+            </a>
+          </p>
+        </section>
+      </div>
     </footer>
   </body>
 </html>
