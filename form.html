@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Мишка</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="logo">
+        <a href="index.html"><img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka"></a>
+      </div>
+      <nav class="main-nav main-nav--closed min-nav--nojs">
+        <button class="main-nav__toggle" type="button">Открыть меню</button>
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a href="catalog.html" class="main-nav__link">Каталог товаров</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#" class="main-nav__link">Вязание на заказ</a>
+          </li>
+          <li class="main-nav__item">
+            <form class="main-nav__search">
+              <input type="search" name="search" placeholder="Поиск по сайту" required>
+              <button type="submit"></button>
+            </form>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__cart" href="#">
+              Корзина: <span>пока пуста</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="intro">
+        <h1 class="intro__title">Вязание на заказ</h1>
+      </div>
+    </header>
+    <main class="main-order">
+      <p class="order-description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
+      <form class="order-form" action="https://echo.htmlacademy.ru/" method="get">
+        <fieldset class="order-form__block">
+          <div class="order-form__inner">
+            <legend class="order-form__title order-form__title--type">Тип</legend>
+            <div class="order-form__group">
+              <input type="radio" id="typeaccessorise" name="type" value="accessorise" checked>
+              <label for="typeaccessorise" class="order-block__item">Аксессуар для интерьера</label>
+              <input type="radio" id="typetoy" name="type" value="toy">
+              <label for="typetoy" class="order-block__item">Детская игрушка</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="order-form__block">
+          <div class="order-form__inner">
+            <legend class="order-form__title order-form__title--color">Цвет</legend>
+            <div class="order-form__group">
+              <input type="checkbox" id="colorwhite" name="colorwhite" value="white" checked>
+              <label for="colorwhite" class="order-block__item">Белый</label>
+              <input type="checkbox" id="colorgray" name="colorgray" value="gray" checked>
+              <label for="colorgray" class="order-block__item">Серый</label>
+              <input type="checkbox" id="colortiffany" name="colortiffany" value="tiffany">
+              <label for="colortiffany" class="order-block__item">«Тиффани»</label>
+              <input type="checkbox" id="colorblack" name="colorblack" value="black">
+              <label for="colorblack" class="order-block__item">Черный</label>
+              <input type="checkbox" id="colorpink" name="colorpink" value="pink">
+              <label for="colorpink" class="order-block__item">Розовый</label>
+              <input type="checkbox" id="colororange" name="colororange" value="orange">
+              <label for="colororange" class="order-block__item">Оранжевый</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="order-form__block">
+          <div class="order-form__inner">
+            <legend class="order-form__title order-form__title--client">ФИО</legend>
+            <div class="order-form__group">
+              <label for="fname" class="order-block__item">Ваше имя</label>
+              <input class="order-block__field" id="fname" type="text" placeholder="Введите ваше имя" name="fname"	required>
+              <label for="lname" class="order-block__item">Фамилия</label>
+              <input class="order-block__field" id="lname" type="text" placeholder="Укажите фамилию" name="lname" required>
+              <label for="mname" class="order-block__item">Отчество</label>
+              <input type="text" class="order-block__field" id="mname" name="mname" placeholder="Отчество, если желаете">
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="order-form__block">
+            <div class="order-form__inner">
+              <legend class="order-form__title order-form__title--mobile">Тел</legend>
+              <input class="order-block__field" type="tel" placeholder="+7 XXX XXX XX XX" name="mobile" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+            </div>
+        </fieldset>
+        <fieldset class="order-form__block">
+          <div class="order-form__inner">
+            <legend class="order-form__title order-form__title--email">Email</legend>
+              <input class="order-block__field" type="email" placeholder="Ваш Email" name="email" required>
+            </div>
+        </fieldset>
+        <fieldset class="order-form__block">
+          <div class="order-form__inner">
+            <legend class="order-form__title order-form__title--comment">Доп</legend>
+            <textarea name="text" rows="6" cols="30">Опишите все ваши пожелания к заказу</textarea>
+          </div>
+        </fieldset>
+        <p class="order-note"><sup>*</sup>Поля обязательны для заполнения</p>
+        <button type="submit" class="order__btn btn">Отправить заказ</button>
+      </form>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__inner">
+        <section class="social">
+          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
+          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
+          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
+        </section>
+        <section class="copyright">
+          <p>
+            Разработано
+            <a href="#" class="copyright__link">в HTML Academy
+              <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
+            </a>
+          </p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
