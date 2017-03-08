@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="page-header">
       <div class="logo">
-        <img src="http://placehold.it/110x60"  width="110" height="60" alt="Mishka">
+        <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
       </div>
       <nav class="main-nav main-nav--closed min-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
@@ -32,7 +33,7 @@
         </ul>
       </nav>
       <div class="intro intro--index">
-        <h1 class="intro__title">Милые штучки ручной работы для дома</h1>
+        <h1 class="intro__title">Милые штуки ручной<br> работы для дома</h1>
       </div>
     </header>
     <main class="main-page">
@@ -70,7 +71,7 @@
             </table>
           </div>
           <div class="featured__image">
-            <img src="http://placehold.it/320x260"  width="320" height="260" alt="Вязаные корзинки">
+            <img src="img/triple-set-mobile@1x.jpg"  width="260" height="315" alt="Вязаные корзинки">
           </div>
           <div class="featured__footer">
             <p class="featured__price">Цена: 990 руб.</p>
@@ -92,8 +93,8 @@
         </div>
       </section>
       <section class="reviews">
-        <div class="review__inner">
-          <h2 class="main_title">Отзывы</h2>
+        <div class="reviews__inner">
+          <h2 class="reviews__title">Отзывы</h2>
           <div class="reviews__list">
             <blockquote class="reviews__item">
               <p class="review__text">
@@ -106,12 +107,12 @@
               </cite>
             </blockquote>
           </div>
+          <div class="review__controls">
+            <a href="#" class="review__controls-link">Предыдущий отзыв</a>
+            <a href="#" class="review__controls-link">Следующий отзыв</a>
+          </div>
+          <a href="#" class="review__btn btn">Написать</a>
         </div>
-        <div class="review__controls">
-          <a href="#" class="review__controls-link">Предыдущий отзыв</a>
-          <a href="#" class="review__controls-link">Следующий отзыв</a>
-        </div>
-        <a href="#" class="review__btn btn">Написать</a>
       </section>
       <section class="contacts">
         <div class="contacts__inner">
@@ -125,11 +126,11 @@
             </div>
             <div class="contacts__item">
               <span class="contacts__field">адрес:</span>
-              <p class="contacts__text">г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101</p>
+              <p class="contacts__text">г. Санкт-Петербург,<br> ул. Большая Конюшенная, д. 19/8, офис 101</p>
             </div>
           </div>
           <div class="contacts__map">
-            <img src="http://placehold.it/320x260"  width="320" height="460" alt="Как нас найти">
+            <img src="img/map-mobile@1x.jpg"  width="320" height="460" alt="Как нас найти">
           </div>
           <a href="#" class="contact__btn btn">Напишите нам</a>
         </div>
@@ -138,24 +139,24 @@
     <footer class="page-footer">
       <div class="page-footer__inner">
         <section class="social">
-          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="http://placehold.it/30x30"  width="30" height="30" alt="Instagram"></a>
-          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="http://placehold.it/30x30"  width="30" height="30" alt="Facebook"></a>
-          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="http://placehold.it/30x30"  width="30" height="30" alt="Twitter"></a>
+          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="img/icon-insta.svg"  width="30" height="30" alt="Instagram"></a>
+          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="img/icon-fb.svg"  width="30" height="30" alt="Facebook"></a>
+          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="img/icon-twitter.svg"  width="30" height="30" alt="Twitter"></a>
         </section>
         <section class="copyright">
           <p>
             Разработано
             <a href="#" class="copyright__link">в HTML Academy
-              <img src="http://placehold.it/35x35"  width="35" height="35" alt="htmlacademy">
+              <img src="img/logo-htmlacademy.svg"  width="35" height="35" alt="htmlacademy">
             </a>
           </p>
         </section>
       </div>
     </footer>
-    <section class="modal visually-hidden">
+    <div class="modal visually-hidden">
         <div class="modal__inner">
-          <h3 class="modal__title">Добавить в корзину</h3>
-          <b>Выберите размер</b>
+          <b class="modal__title">Добавить в корзину</b>
+          <span>Выберите размер</span>
           <form class="modal-form" action="https://echo.htmlacademy.ru/" method="get">
             <input type="radio" id="smallsize" name="size" value="small" checked>
             <label for="smallsize" class="modal-form__item">S</label>
@@ -166,6 +167,6 @@
             <button type="submit" class="modal-form__btn btn">Добавить</button>
           </form>
         </div>
-    </section>
+    </div>
   </body>
 </html>
