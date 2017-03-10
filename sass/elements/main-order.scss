@@ -1,0 +1,11 @@
+.main-order {
+  padding: 30px;
+}
+
+.order-description {
+  @include text(13px, 24px);
+}
+
+.order__btn {
+    background-color: $color-primary--lighten;
+  }

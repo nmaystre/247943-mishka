@@ -1,0 +1,15 @@
+.btn {
+  display: inline-block;
+  @include reset;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 240px;
+  @include center;
+  border: 3px solid $gray--darkest;
+
+  font-family: "opensansbold", sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
+}

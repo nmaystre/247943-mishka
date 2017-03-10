@@ -1,0 +1,29 @@
+
+.order-form {
+
+  &__block {
+    border: none;
+    @include reset;
+  }
+
+  &__title {
+    padding-top: 30px;
+    @include title (16px, 17px);
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+
+  &__group input[type="checkbox"],
+  &__group input[type="radio"]{
+    display: none;
+  }
+
+  &__group label {
+    display: inline-block;
+    width: 80%;
+    padding: 20px 0 20px 60px;
+    box-sizing: border-box;
+
+    @include title (17px, 18px);
+  }
+}

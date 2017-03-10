@@ -1,0 +1,44 @@
+.page-footer {
+  background-color: $color-background--darken;
+
+  &__inner {
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+.social {
+  width: 100%;
+  @include border-bottom;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  margin: 0;
+
+  &__link {
+  font-size: 0px;
+  padding: 15px;
+  }
+}
+
+.copyright {
+  vertical-align: middle;
+  padding: 0;
+  padding-top: 30px;
+  margin: 0;
+
+  p {
+    margin: 0;
+    @include title (18px, 19px);
+  }
+
+  &__link {
+    font-size: 0px;
+    vertical-align: middle;
+  }
+
+  &__link img {
+    vertical-align: middle;
+    padding: 0;
+    padding-left: 30px;
+  }
+}

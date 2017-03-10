@@ -1,0 +1,52 @@
+.modal {
+  text-align: center;
+
+  &__inner {
+    padding: 30px;
+  }
+
+  &__title {
+    display: block;
+    min-width: 60%;
+    box-sizing: border-box;
+    @include center;
+    padding: 0;
+    padding-top: 30px;
+    text-transform: uppercase;
+    @include title (25px, 30px);
+  }
+
+  span {
+    display: block;
+    @include center;
+    padding: 20px;
+    @include text (15px, 30px);
+  }
+}
+
+.modal-form {
+  input {
+    display: none;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 20px 30px;
+    @include center;
+    margin-right: 7px;
+    @include title (17px, 17px);
+    vertical-align: middle;
+    @include border;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__btn {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: $color-background--lighten;
+    margin: 30px auto;
+  }
+}

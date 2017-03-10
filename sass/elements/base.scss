@@ -1,0 +1,20 @@
+body {
+  background-color: $color-background--lighten;
+  @include text (15px, 24px);
+  min-width: 320px;
+  max-width: 600px;
+}
+
+h1 {
+  @include title (27px, 30px);
+  text-align: center;
+}
+
+/* не понимаю почему @medium title не работает ни одна примесь*/
+h2 {
+  @include title (25px, 30px);
+}
+
+p {
+  @include text (15px, 24px);
+}
