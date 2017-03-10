@@ -1,0 +1,54 @@
+/* contacts */
+
+.contacts {
+
+  &__inner {
+    padding: 30px;
+  }
+
+  &__title {
+    @include reset;
+    @include title (25px, 30px);
+    padding-top: 30px;
+  }
+
+  &__item {
+    padding-bottom: 40px;
+    display: inline-block;
+  }
+
+  &__field {
+    @include reset;
+    width: 25%;
+    box-sizing: border-box;
+    padding-right: 40px;
+    vertical-align: top;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $gray;
+  }
+
+  &__link::after {
+    @include underline (-5px, 1px, $color-primary);
+  }
+
+  &__text {
+    display: inline-block;
+    width: 60%;
+    box-sizing: border-box;
+    @include reset;
+    @include text (15px, 30px);
+  }
+
+  &__map {
+    overflow: hidden;
+  }
+
+  &__btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

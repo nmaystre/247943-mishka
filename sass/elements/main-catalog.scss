@@ -1,0 +1,40 @@
+.main-catalog {
+  padding: 30px;
+}
+
+.catalog-item {
+  @include border;
+  margin-bottom: 30px;
+
+  &__description {
+    padding: 25px;
+  }
+
+  &__description-header {
+    @include border-bottom;
+    padding-bottom: 20px;
+  }
+
+  &__name {
+    @include reset;
+    @include title (17px, 24px);
+  }
+
+  &__text {
+    @include reset;
+    @include text (13px, 30px);
+  }
+
+  &__description-order {
+    vertical-align: middle;
+    padding-top: 20px;
+  }
+
+  &__price {
+    @include title (15px, 24px);
+  }
+
+  &__buy {
+    font-size: 0;
+  }
+}

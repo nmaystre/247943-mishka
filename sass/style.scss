@@ -1,0 +1,24 @@
+@import "elements/font.scss";
+@import "elements/variables.scss";
+@import "elements/mixins.scss";
+@import "elements/normalize.scss";
+
+@import "elements/base.scss";
+@import "elements/btns.scss";
+@import "elements/modal.scss";
+
+@import "elements/header.scss";
+@import "elements/main-nav.scss";
+@import "elements/intro.scss";
+
+@import "elements/categories.scss";
+@import "elements/main-catalog.scss"; /* catalog */
+@import "elements/main-order.scss"; /* form */
+@import "elements/order-form.scss"; /* form */
+@import "elements/featured.scss";
+@import "elements/about.scss";
+@import "elements/reviews.scss";
+@import "elements/production.scss"; /* catalog */
+@import "elements/contacts.scss";
+
+@import "elements/page-footer.scss";

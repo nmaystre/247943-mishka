@@ -1,0 +1,45 @@
+$font-primary: opensans;
+$font-back: arial,sans-serif;
+
+$font: $font-primary $font-back;
+
+$color-background--lighten: #ffffff; /* white background */
+$color-background--darken: #f1f1f1; /* gray background */
+
+$color-primary--lightest: #93e1d0; /* tiffany down text */
+$color-primary--lighten: #59d5bc; /* tiffany hvr background */
+$color-primary: #63d1bb; /* tiffany text/background */
+
+$color-primary--lightest: #8dd5c9; /* fountain down text */
+$color-secondary--lighten: #46c1ae; /* fountain hvr background */
+$color-secondary: #56c3b2; /* fountain background */
+
+$gray--lightest: #ececec; /* border color */
+$gray--lighten: #8d8d8d; /* btn down text clr */
+$gray: #444444; /* main text color */
+$gray--darkest: #000000; /* big links text clr */
+
+
+/* эти цвета потом удалю, когда буду описывать hvr и тд */
+/* colors for hover and down */
+
+$biglink-color: $gray--darkest;
+$biglink-color--hover: rgba($gray--darkest, 0.6);
+$biglink-color--down: rgba($gray--darkest, 0.3);
+
+/* arrow clr */
+
+$arrow-color: $gray--darkest;
+$arrow-color--hover: rgba($gray--darkest, 0.5);
+$arrow-color--hover: rgba($gray--darkest, 0.25);
+
+/* mail link */
+
+$mail-link: $gray;
+$mail-link__after: $color-secondary;
+
+$mail-link--hover: $color-secondary--lighten;
+$mail-link__after--hover: $color-secondary--lighten;
+
+$mail-link--hover: rgba($color-secondary--lighten, 0.3);
+$mail-link__after--hover: rgba($color-secondary--lighten, 0.3);

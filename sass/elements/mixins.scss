@@ -1,0 +1,44 @@
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+@mixin center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+@mixin title ($fontsize, $lineheight) {
+  font-family: $font;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  font-weight: 700;
+  color: $gray--darkest;
+}
+
+@mixin text ($fontsize, $lineheight) {
+  font-family: $font;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  font-weight: 400;
+  color: $gray;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $gray--lightest;
+}
+
+@mixin border {
+  border: 1px solid $gray--lightest;
+}
+
+@mixin underline ($bottom, $lineheight, $linecolor){
+  position: absolute;
+  content: "";
+  bottom: $bottom;
+  left:0px;
+  right: 0px;
+  height: $lineheight;
+  background-color: $linecolor;
+}

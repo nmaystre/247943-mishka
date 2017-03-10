@@ -1,0 +1,60 @@
+
+.featured {
+    @include text (15px, 25px);
+
+  &__inner {
+    padding: 30px;
+  }
+
+  &__title {
+    @include title (25px, 30px);
+    @include reset;
+    padding-top: 30px;
+  }
+
+  &__label {
+    @include reset;
+    @include title (17px, 20px);
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 25px 0;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  &__table tr {
+    @include border-bottom;
+  }
+
+  &__value {
+    padding: 10px 30px 10px 0;
+  }
+
+  &__field {
+    padding: 10px 0;
+  }
+
+  &__image {
+    overflow: hidden;
+    @include center;
+    padding: 0;
+    padding-top: 25px;
+  }
+
+  &__footer {
+  @include center;
+  }
+
+  &__price {
+    padding: 15px 0;
+    @include title (17px, 24px);
+    color: $gray;
+  }
+}

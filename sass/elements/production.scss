@@ -1,0 +1,29 @@
+
+.production {
+  @include border;
+  text-align: center;
+
+  video {
+  }
+
+  &__btn {
+    text-align: center;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px 30px 30px;
+  }
+}
+
+.production-process {
+    @include title (17px, 24px);
+    padding-left: 80px;
+    width: 130px;
+    text-align: left;
+}
+
+.production-description {
+  @include text(13px, 24px);
+  text-align: left;
+  padding: 0px 30px;
+}
