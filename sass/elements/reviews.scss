@@ -32,8 +32,11 @@
   }
 
   &__controls {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    min-width: 40%;
     @include reset;
+    font-size: 0;
   }
 
   &__controls-link {
@@ -42,5 +45,123 @@
     width: 50%;
     box-sizing: border-box;
     @include border;
+  }
+}
+
+
+
+@media #{$tablet-widths} {
+  .reviews {
+
+    &__inner {
+      position: relative;
+      padding: 4%;
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      @include title (43px, 50px);
+      padding: 0;
+      flex-basis: 50%;
+      order: -2;
+    }
+
+    &__footer {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 40%;
+    }
+  }
+
+  .review {
+
+    &__btn {
+      order: -1;
+      width: 170px;
+      align-self: center;
+    }
+
+    &__text {
+      @include text (17px, 30px);
+      width: 90%;
+    }
+
+    &__author {
+      flex-basis: 100%;
+    }
+
+    &__from {
+      flex-basis: 100%;
+    }
+
+    &__controls {
+      position: absolute;
+      content: "";
+      bottom: 30px;
+      right: 4%;
+      flex-basis: 40%;
+    }
+    /*не смогла сделать стрелки на флексах */
+  }
+}
+
+@media #{$desktop-widths} {
+  .reviews {
+    padding-left: 13%;
+
+    &__inner {
+      position: relative;
+      padding: 4%;
+      display: flex;
+      flex-flow: row;
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      @include title (53px, 57px);
+      padding: 0;
+      flex-basis: 50%;
+      order: -2;
+    }
+
+    &__footer {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 40%;
+    }
+  }
+
+  .review {
+
+    &__btn {
+      order: -1;
+      width: 170px;
+      align-self: center;
+    }
+
+    &__text {
+      @include text (17px, 30px);
+      width: 67%;
+    }
+
+    &__author {
+      flex-basis: 100%;
+    }
+
+    &__from {
+      flex-basis: 100%;
+    }
+
+    &__controls {
+      position: absolute;
+      content: "";
+      bottom: 30px;
+      right: 4%;
+      flex-basis: 40%;
+    }
   }
 }

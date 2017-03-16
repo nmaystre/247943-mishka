@@ -2,7 +2,12 @@
   text-align: center;
 
   &__inner {
-    padding: 30px;
+    padding: 4%;
+    @include border;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__title {
@@ -11,7 +16,7 @@
     box-sizing: border-box;
     @include center;
     padding: 0;
-    padding-top: 30px;
+    padding-top: 4%;
     text-transform: uppercase;
     @include title (25px, 30px);
   }
@@ -19,7 +24,7 @@
   span {
     display: block;
     @include center;
-    padding: 20px;
+    padding: 2%;
     @include text (15px, 30px);
   }
 }
@@ -33,7 +38,7 @@
     display: inline-block;
     padding: 20px 30px;
     @include center;
-    margin-right: 7px;
+    margin-right: 1%;
     @include title (17px, 17px);
     vertical-align: middle;
     @include border;
@@ -47,6 +52,53 @@
     background-color: $color-primary;
     border-color: $color-primary;
     color: $color-background--lighten;
-    margin: 30px auto;
+    margin: 4% auto;
+  }
+}
+
+@media #{$tablet-widths} {
+  .modal {
+
+    &__inner {
+      margin: auto;
+      max-width: 570px;
+    }
+
+    &__title {
+      @include title (30px, 57px);
+    }
+  }
+    .modal-form {
+    &__item {
+      padding: 20px 40px;
+    }
+
+    &__btn {
+      width: 71%;
+    }
+  }
+}
+
+
+@media #{$desktop-widths} {
+  .modal {
+
+    &__inner {
+      margin: auto;
+      max-width: 570px;
+    }
+
+    &__title {
+      @include title (30px, 57px);
+    }
+  }
+    .modal-form {
+    &__item {
+      padding: 20px 40px;
+    }
+
+    &__btn {
+      width: 71%;
+    }
   }
 }

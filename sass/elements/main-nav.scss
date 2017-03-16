@@ -1,4 +1,5 @@
 .main-nav {
+  position: relative;
 
   &__list {
     padding: 0px;
@@ -7,12 +8,27 @@
 
   &__item {
     list-style-type: none;
-    padding: 30px 60px;
+    padding: 7%;
     @include border-bottom;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
  }
 
-  &__item:first-child {
+  &__item--desktop {
+    display: none;
+  }
+
+  &__logo {
+    position: relative;
     border-top: 1px solid $gray--lightest;
+    padding: 5% 7%;
+
+    img {
+      display: flex;
+      margin: auto;
+    }
   }
 
   &__item a,
@@ -21,7 +37,249 @@
   text-decoration: none;
   }
 
-  &--closed &__item {
-    display: none;
+  &__toggle {
+    position: absolute;
+    right: 10%;
+    top: 7%;
+    @include title(0px, 0px);
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    z-index: 2;
+    background-color: transparent;
   }
+
+}
+/* как лучле сгруппировать эти селекторы?
+все внутри .main nav как каша получается... */
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  /* тут же можно оставить пиксели? */
+  width: 21px;
+  height: 2px;
+  background-color: $gray--darkest;
+  box-shadow: 0 6px 0 0 $gray--darkest,
+              0 12px 0 0 $gray--darkest;
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+  background-color: $gray;
+  box-shadow: 0 6px 0 0 $gray,
+              0 12px 0 0 $gray;
+}
+
+.main-nav--opened .main-nav__toggle {
+  position: absolute;
+  right: 10%;
+  top: 7%;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    width: 21px;
+    height: 2px;
+    background-color: $gray--darkest;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: $gray;
+  }
+}
+
+
+@media #{$tablet-widths} {
+
+  .main-nav {
+    position: relative;
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      content: "Бесплатная доставка по России";
+      bottom: 30px;
+      right: 30px;
+      @include text(15px, 24px);
+      color: $gray;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__list {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    background-color: $color-background--middle;
+
+    }
+
+    &__item {
+      height: 90px;
+      @include border-right;
+      padding: 2%;
+      margin: 0;
+      vertical-align: middle;
+
+      background-color: $color-background--lighten;
+      /* глупый вопрос, но как выровнять текст по центру? */
+      white-space: nowrap;
+      flex-basis: 15%;
+    }
+
+    &__item:first-child {
+      border-top: none;
+      padding: 0;
+      flex-grow: 2;
+
+      flex-basis: 370px;
+      .logo {
+        text-align: left;
+        padding-left: 10%;
+        box-sizing: border-box;
+      }
+    }
+
+    &__item:nth-child(2),
+    &__item:nth-child(3) {
+      flex-basis: 225px;
+      order: 3;
+      background-color: $color-background--middle;
+      border: none;
+    }
+
+    &__item:nth-child(4) {
+      flex-basis: 90px;
+    }
+
+    &__item:nth-child(5) {
+      flex-basis: 300px;
+      flex-grow: 1;
+    }
+
+/* с 980 пх все равно начинает перескакивать каталог,
+как избавиться? выставить большие ширины? */
+
+    &__item a,
+    &__search input {
+    @include title(15px, 24px);
+    }
+  }
+
+  .main-nav__search {
+    input[type="search"] {
+    font-size: 0;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+
+    .main-nav {
+      width: 100%;
+
+      &::after {
+        position: absolute;
+        content: "Бесплатная доставка по России";
+        bottom: 30px;
+        right: 30px;
+        @include text(15px, 24px);
+        color: $gray;
+      }
+
+      &__toggle {
+        display: none;
+      }
+
+      &__list {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      background-color: $color-background--middle;
+      }
+
+      &__item {
+        height: 90px;
+        @include border-right;
+        padding: 2%;
+        margin: 0;
+        vertical-align: middle;
+        background-color: $color-background--lighten;
+        white-space: nowrap;
+      }
+
+      &__item--desktop {
+        display: block;
+      }
+
+      &__item:first-child {
+        border-top: none;
+        padding: 0;
+        flex-basis: 200px;
+        flex-grow: 2;
+        margin-left: auto;
+        margin-right: auto;
+
+        .logo {
+          text-align: left;
+          padding-left: 10%;
+          box-sizing: border-box;
+
+        }
+      }
+
+      &__item:nth-child(2),
+      &__item:nth-child(3) {
+        flex-basis: 225px;
+        order: -1;
+      }
+
+
+      &__item:nth-child(4) {
+        flex-basis: 90px;
+      }
+
+      &__item:nth-child(5) {
+        flex-basis: 320px;
+      }
+
+      &__item:nth-child(6),
+      &__item:nth-child(7) {
+        flex-basis: 225px;
+        background-color: $color-background--middle;
+        border: none;
+      }
+
+      &__item a,
+      &__search input {
+      @include title(15px, 24px);
+      }
+    }
+
+    .main-nav__search {
+      input[type="search"] {
+      font-size: 0;
+      }
+    }
 }

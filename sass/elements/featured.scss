@@ -3,13 +3,13 @@
     @include text (15px, 25px);
 
   &__inner {
-    padding: 30px;
+    padding: 4%;
   }
 
   &__title {
     @include title (25px, 30px);
     @include reset;
-    padding-top: 30px;
+    padding-top: 4%;
   }
 
   &__label {
@@ -21,7 +21,7 @@
 
   &__text {
     margin: 0;
-    padding: 25px 0;
+    padding: 3% 0;
   }
 
   &__table {
@@ -56,5 +56,128 @@
     padding: 15px 0;
     @include title (17px, 24px);
     color: $gray;
+  }
+}
+
+
+
+@media #{$tablet-widths} {
+  .featured {
+
+    &__inner {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &__header {
+      flex-basis: 670px;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+    }
+
+    &__title {
+      @include title (43px, 50px);
+      padding: 0;
+
+    }
+
+    &__label {
+      width: 10%;
+      text-align: center;
+      @include title (17px, 17px);
+      color: $color-primary;
+      padding-right: 4%;
+    }
+
+    &__content {
+      flex-basis: 334px;
+    }
+
+    &__image {
+      flex-basis: 334px;
+    }
+
+/* я попробовать все сделать только на флексах,
+но ничего не вышло..
+
+Попробовала картинку через абсолют
+(ведь там наложение в десктопной версии),
+но что-то не получилось..
+(высота самого контейнера стремилась к нулю)))
+
+может быть футер можно было через абсолютное? */
+
+    &__footer {
+      position: absolute;
+      content: "";
+      bottom: 5%;
+      left: 8%;
+      flex-basis: 334px;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .featured {
+
+    &__inner {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &__header {
+      flex-basis: 800px;
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &__title {
+      @include title (53px, 57px);
+      padding: 0;
+
+    }
+
+    &__label {
+      width: 10%;
+      padding-left: 4%;
+      padding-right: 4%;
+      order: -1;
+      text-align: center;
+      @include title (17px, 17px);
+      color: $color-primary;
+    }
+
+    &__content {
+      padding-left: 13%;
+      flex-basis: 350px;
+    }
+
+    &__text {
+      @include text(17px, 30px);
+    }
+
+    &__image {
+      order: 3;
+      flex-basis: 350px;
+    }
+
+    &__footer {
+      position: absolute;
+      content: "";
+      bottom: 5%;
+      left: 20%;
+      flex-basis: 350px;
+    }
   }
 }

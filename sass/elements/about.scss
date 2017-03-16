@@ -1,6 +1,6 @@
 .about {
   &__inner {
-    padding: 30px;
+    padding: 4%;
   }
 
   &__title {
@@ -18,5 +18,69 @@
     padding-top: 50px;
     width: 70%;
     @include title (15px, 24px);
+
+    br {
+      display: none;
+    }
   }
+}
+
+
+@media #{$tablet-widths} {
+
+  .about {
+
+    &__title {
+      @include title (43px, 50px);
+    }
+
+    &__list {
+      max-height: 500px;
+      display: flex;
+      flex-flow: column;
+      flex-wrap: wrap;
+      align-content: baseline;
+    }
+
+    &__item {
+      padding-top: 100px;
+      @include title(20px, 22px);
+      max-width: 45%;
+
+      br {
+        display: inline;
+      }
+    }
+  }
+}
+
+
+@media #{$desktop-widths} {
+
+  .about {
+    padding-left: 13%;
+
+    &__title {
+      @include title (53px, 57px);
+    }
+
+    &__list {
+      max-height: 500px;
+      display: flex;
+      flex-flow: column;
+      flex-wrap: wrap;
+      align-content: baseline;
+    }
+
+    &__item {
+      padding-top: 100px;
+      @include title(20px, 22px);
+      max-width: 45%;
+
+      br {
+        display: inline;
+      }
+    }
+  }
+
 }

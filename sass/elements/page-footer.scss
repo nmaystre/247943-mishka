@@ -2,28 +2,42 @@
   background-color: $color-background--darken;
 
   &__inner {
-    padding: 30px;
+    padding: 4%;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__logo {
+    display: none;
   }
 }
 
 .social {
   width: 100%;
+
   @include border-bottom;
-  padding-bottom: 30px;
-  padding-top: 15px;
+  padding-bottom: 4%;
+  padding-top: 2%;
   margin: 0;
 
   &__link {
   font-size: 0px;
-  padding: 15px;
+  padding: 2%;
+  }
+
+  &__img {
+    max-height: 35px;
+    /* как перебить img height=auto из base ?*/
   }
 }
 
 .copyright {
+
   vertical-align: middle;
   padding: 0;
-  padding-top: 30px;
+  padding-top: 4%;
   margin: 0;
 
   p {
@@ -39,6 +53,92 @@
   &__link img {
     vertical-align: middle;
     padding: 0;
-    padding-left: 30px;
+    padding-left: 20px;
+  }
+}
+
+@media #{$tablet-widths} {
+
+  .page-footer {
+
+    &__inner {
+      flex-flow: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      display: flex;
+      flex-basis: 30%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 0;
+    border-bottom: 0;
+
+    &__link {
+      padding-bottom: 0;
+      padding: 0px 20px;
+    }
+  }
+
+  .copyright {
+    display: flex;
+    flex-basis: 30%;
+
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0;
+  }
+}
+
+@media #{$desktop-widths} {
+
+  .page-footer {
+
+    &__inner {
+      flex-flow: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      display: flex;
+      flex-basis: 30%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 0;
+    border-bottom: 0;
+
+    &__link {
+      padding-bottom: 0;
+      padding: 0px 20px;
+    }
+  }
+
+  .copyright {
+    display: flex;
+    flex-basis: 30%;
+
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0;
   }
 }

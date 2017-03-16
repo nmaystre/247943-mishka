@@ -1,10 +1,15 @@
+$tablet-widths: "(min-width: 768px) and (max-width: 1049px)";
+$desktop-widths: "(min-width: 1050px)";
+
 $font-primary: opensans;
 $font-back: arial,sans-serif;
 
 $font: $font-primary $font-back;
 
+
 $color-background--lighten: #ffffff; /* white background */
 $color-background--darken: #f1f1f1; /* gray background */
+$color-background--middle: #f9f9f9;
 
 $color-primary--lightest: #93e1d0; /* tiffany down text */
 $color-primary--lighten: #59d5bc; /* tiffany hvr background */

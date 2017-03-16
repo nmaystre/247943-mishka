@@ -3,13 +3,13 @@
 .contacts {
 
   &__inner {
-    padding: 30px;
+    padding: 4%;
   }
 
   &__title {
     @include reset;
     @include title (25px, 30px);
-    padding-top: 30px;
+    padding-top: 4%;
   }
 
   &__item {
@@ -50,5 +50,54 @@
   &__btn {
     margin-top: 30px;
     margin-bottom: 10px;
+  }
+}
+
+
+@media #{$tablet-widths} {
+  .contacts {
+    position: relative;
+
+    &__inner {
+      display: flex;
+      flex-flow: column;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .contacts {
+    position: relative;
+
+    &__inner {
+      padding-left: 16%;
+      /* объясни пожалуйста, почему тут пришлось ставить 16% ? */
+      display: flex;
+      flex-flow: column;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+    }
+
+    &__map {
+      position: absolute;
+      content: "";
+      top: 4%;
+      right: 4%;
+    }
+
+    &__btn {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
 }

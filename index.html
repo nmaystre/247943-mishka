@@ -8,12 +8,14 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="logo">
-        <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
-      </div>
-      <nav class="main-nav main-nav--closed min-nav--nojs">
+      <nav class="main-nav main-nav--closed main-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
         <ul class="main-nav__list">
+          <li class="main-nav__item main-nav__logo">
+            <div class="logo">
+              <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+            </div>
+          </li>
           <li class="main-nav__item">
             <a href="catalog.html" class="main-nav__link">Каталог товаров</a>
           </li>
@@ -30,6 +32,12 @@
             <a class="main-nav__cart" href="#">
               Корзина: <span>пока пуста</span>
             </a>
+          </li>
+          <li class="main-nav__item main-nav__item--desktop">
+            <a href="#" class="main-nav__link">Новые поступления</a>
+          </li>
+          <li class="main-nav__item main-nav__item--desktop">
+            <a href="#" class="main-nav__link">Распродажа</a>
           </li>
         </ul>
       </nav>
@@ -84,12 +92,12 @@
         <div class="about__inner">
           <h2 class="about__title">Коротко о нас:</h2>
           <ul class="about__list">
-            <li class="about__item">Экологически чистые материалы</li>
-            <li class="about__item">Скандинавский стиль по российской цене</li>
-            <li class="about__item">Увеличивает лайки на фотографиях</li>
-            <li class="about__item">Связано вручную с  любовью и умилением</li>
-            <li class="about__item">Поддержка отечественного производителя</li>
-            <li class="about__item">Поставляется в  подарочной упаковке</li>
+            <li class="about__item">Экологически <br>чистые материалы</li>
+            <li class="about__item">Скандинавский стиль <br>по российской цене</li>
+            <li class="about__item">Увеличивает лайки <br>на фотографиях</li>
+            <li class="about__item">Связано вручную с <br>любовью и умилением</li>
+            <li class="about__item">Поддержка отечественного <br>производителя</li>
+            <li class="about__item">Поставляется в <br>подарочной упаковке</li>
           </ul>
         </div>
       </section>
@@ -139,6 +147,9 @@
     </main>
     <footer class="page-footer">
       <div class="page-footer__inner">
+        <div class="page-footer__logo">
+          <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+        </div>
         <section class="social">
           <a href="#" class="social__link social__link--in">Мы в Instagram<img src="img/icon-insta.svg"  width="30" height="30" alt="Instagram"></a>
           <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="img/icon-fb.svg"  width="30" height="30" alt="Facebook"></a>
@@ -169,5 +180,24 @@
           </form>
         </div>
     </div>
+    <script>
+   var navMain = document.querySelector('.main-nav');
+   var navToggle = document.querySelector('.main-nav__toggle');
+
+   console.log(navToggle);
+   navMain.classList.remove('main-nav--nojs');
+
+   navToggle.addEventListener('click', function() {
+     console.log(navToggle);
+
+     if (navMain.classList.contains('main-nav--closed')) {
+       navMain.classList.remove('main-nav--closed');
+       navMain.classList.add('main-nav--opened');
+     } else {
+       navMain.classList.add('main-nav--closed');
+       navMain.classList.remove('main-nav--opened');
+     }
+   });
+ </script>
   </body>
 </html>

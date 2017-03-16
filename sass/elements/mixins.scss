@@ -29,6 +29,10 @@
   border-bottom: 1px solid $gray--lightest;
 }
 
+@mixin border-right {
+  border-right: 1px solid $gray--lightest;
+}
+
 @mixin border {
   border: 1px solid $gray--lightest;
 }
