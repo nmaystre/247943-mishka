@@ -1,35 +1,40 @@
 .modal {
-  text-align: center;
+
+  @include border;
+  width: 320px;
+  margin: 0 auto;
+
 
   &__inner {
-    padding: 4%;
-    @include border;
+    @include container(260px);
     display: flex;
-    flex-flow: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
 
   &__title {
-    display: block;
-    min-width: 60%;
-    box-sizing: border-box;
     @include center;
     padding: 0;
-    padding-top: 4%;
+    padding-top: 30px;
     text-transform: uppercase;
     @include title (25px, 30px);
   }
 
   span {
-    display: block;
     @include center;
-    padding: 2%;
+    padding: 20px 0px;
     @include text (15px, 30px);
   }
 }
 
 .modal-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
   input {
     display: none;
   }
@@ -37,11 +42,10 @@
   &__item {
     display: inline-block;
     padding: 20px 30px;
-    @include center;
-    margin-right: 1%;
     @include title (17px, 17px);
-    vertical-align: middle;
     @include border;
+    margin: 0;
+
   }
 
   &__item:last-child {
@@ -52,53 +56,28 @@
     background-color: $color-primary;
     border-color: $color-primary;
     color: $color-background--lighten;
-    margin: 4% auto;
+    margin: 30px auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
 @media #{$tablet-widths} {
+
   .modal {
+    @include border;
+    width: 568px;
+    margin: 0 auto;
 
     &__inner {
-      margin: auto;
-      max-width: 570px;
-    }
-
-    &__title {
-      @include title (30px, 57px);
+      @include container(360px);
     }
   }
-    .modal-form {
+
+  .modal-form {
+
     &__item {
-      padding: 20px 40px;
-    }
-
-    &__btn {
-      width: 71%;
-    }
-  }
-}
-
-
-@media #{$desktop-widths} {
-  .modal {
-
-    &__inner {
-      margin: auto;
-      max-width: 570px;
-    }
-
-    &__title {
-      @include title (30px, 57px);
-    }
-  }
-    .modal-form {
-    &__item {
-      padding: 20px 40px;
-    }
-
-    &__btn {
-      width: 71%;
+      padding: 15px 50px;
     }
   }
 }

@@ -1,8 +1,12 @@
-.main-catalog {
-  padding: 30px;
+.catalog {
+  padding-top: 30px;
+  @include container(260px);
+
 }
 
 .catalog-item {
+  display: flex;
+  flex-wrap: wrap;
   @include border;
   margin-bottom: 30px;
 
@@ -11,7 +15,6 @@
   }
 
   &__description-header {
-    @include border-bottom;
     padding-bottom: 20px;
   }
 
@@ -26,6 +29,7 @@
   }
 
   &__description-order {
+    @include border-top;
     vertical-align: middle;
     padding-top: 20px;
   }
@@ -36,5 +40,66 @@
 
   &__buy {
     font-size: 0;
+  }
+}
+
+
+@media #{$tablet-widths} {
+
+  .catalog {
+    @include container(668px);
+  }
+
+  .catalog-item {
+
+      &__link {
+        order: -1;
+        width: 334px;
+        background-color: red;
+        height: 333px; /* потом удалю */
+      }
+
+      &__description {
+        width: 330px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &__name {
+        @include title(20px, 24px);
+      }
+
+      &__text {
+        @include text(15px, 30px);
+      }
+
+      &__description-order {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__price {
+        @include title(17px, 20px);
+      }
+  }
+}
+
+@media #{$desktop-widths} {
+
+  .catalog {
+    @include container(1050px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .catalog-item {
+    width: 315px;
+  }
+
+  .catalog-item:not(:nth-of-type(3n)) {
+    margin-right: 30px;
   }
 }

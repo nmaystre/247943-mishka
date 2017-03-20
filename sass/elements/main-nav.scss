@@ -1,38 +1,33 @@
 .main-nav {
   position: relative;
+  z-index: 1;
+
 
   &__list {
+  /*  @include container(260px); */
     padding: 0px;
     margin: 0px;
   }
 
   &__item {
     list-style-type: none;
-    padding: 7%;
-    @include border-bottom;
-    width: 100%;
+    padding: 30px 0;
     box-sizing: border-box;
     margin: auto;
     text-align: center;
+    @include border-bottom;
  }
 
-  &__item--desktop {
+  &__promo {
     display: none;
   }
 
   &__logo {
     position: relative;
-    border-top: 1px solid $gray--lightest;
-    padding: 5% 7%;
-
-    img {
-      display: flex;
-      margin: auto;
-    }
+    padding: 20px 0px;
   }
 
-  &__item a,
-  &__search input {
+  &__link {
   @include title(17px, 24px);
   text-decoration: none;
   }
@@ -59,7 +54,6 @@
   position: absolute;
   top: 7px;
   left: 5px;
-  /* тут же можно оставить пиксели? */
   width: 21px;
   height: 2px;
   background-color: $gray--darkest;
@@ -108,178 +102,106 @@
 @media #{$tablet-widths} {
 
   .main-nav {
-    position: relative;
-    width: 100%;
-
-    &::after {
-      position: absolute;
-      content: "Бесплатная доставка по России";
-      bottom: 30px;
-      right: 30px;
-      @include text(15px, 24px);
-      color: $gray;
-    }
+    padding: 0px 50px;
 
     &__toggle {
       display: none;
     }
 
     &__list {
+    @include container(668px);
     display: flex;
-    flex-flow: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-
-    background-color: $color-background--middle;
-
     }
 
     &__item {
-      height: 90px;
-      @include border-right;
-      padding: 2%;
       margin: 0;
-      vertical-align: middle;
-
-      background-color: $color-background--lighten;
-      /* глупый вопрос, но как выровнять текст по центру? */
-      white-space: nowrap;
-      flex-basis: 15%;
+      border-bottom: none;
     }
 
-    &__item:first-child {
+    &__link {
+      @include title(15px, 24px);
+    }
+
+    &__logo {
+      padding: 20px 0px;
+      min-width: 300px;
+      box-sizing: border-box;
       border-top: none;
-      padding: 0;
-      flex-grow: 2;
-
-      flex-basis: 370px;
-      .logo {
-        text-align: left;
-        padding-left: 10%;
-        box-sizing: border-box;
-      }
+      text-align: left;
     }
 
-    &__item:nth-child(2),
-    &__item:nth-child(3) {
-      flex-basis: 225px;
-      order: 3;
-      background-color: $color-background--middle;
+    &__catalog {
+      order: 1;
+      min-width: 167px;
+      border: none;
+      text-align: left;
+    }
+
+    &__knitting {
+      order: 1;
+      min-width: 167px;
       border: none;
     }
 
-    &__item:nth-child(4) {
-      flex-basis: 90px;
+    &__search {
+      min-width: 85px;
+      box-sizing: border-box;
+      @include border-right;
+      @include border-left;
     }
 
-    &__item:nth-child(5) {
-      flex-basis: 300px;
+    &__link--search {
+      font-size: 0;
+      background: green;
+    }
+
+    &__cart {
       flex-grow: 1;
-    }
-
-/* с 980 пх все равно начинает перескакивать каталог,
-как избавиться? выставить большие ширины? */
-
-    &__item a,
-    &__search input {
-    @include title(15px, 24px);
-    }
-  }
-
-  .main-nav__search {
-    input[type="search"] {
-    font-size: 0;
+      text-align: right;
     }
   }
 }
+/* не понимаю как выровнять навигацию по ширине.
+при space-around последние блоки растягиются по всей длине */
 
-@media #{$desktop-widths} {
+ @media #{$desktop-widths} {
 
     .main-nav {
-      width: 100%;
-
-      &::after {
-        position: absolute;
-        content: "Бесплатная доставка по России";
-        bottom: 30px;
-        right: 30px;
-        @include text(15px, 24px);
-        color: $gray;
-      }
-
-      &__toggle {
-        display: none;
-      }
 
       &__list {
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      background-color: $color-background--middle;
+        @include container(1050px);
+
       }
 
-      &__item {
-        height: 90px;
-        @include border-right;
-        padding: 2%;
-        margin: 0;
-        vertical-align: middle;
-        background-color: $color-background--lighten;
-        white-space: nowrap;
-      }
-
-      &__item--desktop {
-        display: block;
-      }
-
-      &__item:first-child {
-        border-top: none;
-        padding: 0;
-        flex-basis: 200px;
-        flex-grow: 2;
-        margin-left: auto;
-        margin-right: auto;
-
-        .logo {
-          text-align: left;
-          padding-left: 10%;
-          box-sizing: border-box;
-
+      &__logo {
+        margin: auto;
+        text-align: center;
         }
-      }
 
-      &__item:nth-child(2),
-      &__item:nth-child(3) {
-        flex-basis: 225px;
+      &__catalog {
+        min-width: 186px;
         order: -1;
+        @include border-right;
       }
 
-
-      &__item:nth-child(4) {
-        flex-basis: 90px;
+      &__knitting {
+        min-width: 186px;
+        order: -1;
+        text-align: left;
+        padding-left: 30px;
       }
 
-      &__item:nth-child(5) {
-        flex-basis: 320px;
+      &__promo {
+        min-width: 186px;
+        text-align: left;
+        display: block;
+        min-width: 190px;
       }
 
-      &__item:nth-child(6),
-      &__item:nth-child(7) {
-        flex-basis: 225px;
-        background-color: $color-background--middle;
-        border: none;
+      &__promo--sale {
+        padding-left: 30px;
       }
-
-      &__item a,
-      &__search input {
-      @include title(15px, 24px);
-      }
-    }
-
-    .main-nav__search {
-      input[type="search"] {
-      font-size: 0;
-      }
-    }
+  }
 }

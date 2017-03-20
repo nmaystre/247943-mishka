@@ -1,16 +1,45 @@
 
 .order-form {
+  margin-bottom: 50px;
 
   &__block {
     border: none;
     @include reset;
   }
 
+  &__inner {
+    @include container(260px);
+  }
+
   &__title {
-    padding-top: 30px;
+    position: relative;
+    padding-top: 20px;
+    margin: 0;
     @include title (16px, 17px);
     text-transform: uppercase;
     color: $color-primary;
+  }
+
+  &__title::after {
+    position: absolute;
+    content: "";
+    top: 28px;
+    right: 0;
+    height: 1px;
+    width: 200px;
+    background-color: $color-primary;
+  }
+
+  /* если я делаю ширину 100% то она перекрывает надпись */
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__group input {
+    width: 100%;
   }
 
   &__group input[type="checkbox"],
@@ -18,12 +47,276 @@
     display: none;
   }
 
-  &__group label {
+  &__group input[type="checkbox"] + label::before,
+  &__group input[type="radio"] + label::before {
+    position: absolute;
+    content: "";
+    top: 8px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $gray;
+  }
+
+  &__group input[type="radio"] + label::before {
+    border-radius: 50%;
+    top: 15px;
+}
+
+  &__group input[type="radio"]:checked + label::after {
+    position: absolute;
+    content: "";
+    top: 29px;
+    left: 14px;
+    width: 16px;
+    height: 16px;
+    background-color: $color-primary;
+    border-radius: 50%;
+  }
+
+  &__group input[type="checkbox"]:checked + label::after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 7px;
+    width: 30px;
+    height: 30px;
+    background-image: url(/img/icon-tick.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /*hover и тд сделаю позже */
+
+  &__group input[type="text"] {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid $gray--darkest;
+    padding: 15px 0px;
+  }
+
+  .order-block__item--client {
+    padding-left: 0px;
+    padding-bottom: 0px;
+  }
+
+  &__title--mobile {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  &__title--mobile::after {
+    top: 48px;
+  }
+
+  &__title--email {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  &__title--email::after {
+    top: 48px;
+  }
+
+  &__title--comment {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+&__title--comment::after {
+    top: 48px;
+  }
+
+  &__add {
+    @include container(260px);
+  }
+}
+
+.order-block {
+
+  &__item {
+    position: relative;
     display: inline-block;
-    width: 80%;
+    width: 200px;
     padding: 20px 0 20px 60px;
     box-sizing: border-box;
-
     @include title (17px, 18px);
+  }
+
+  &__field[type="tel"] {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid $gray--darkest;
+    padding: 15px 0px;
+  }
+
+  &__field[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid $gray--darkest;
+    padding: 15px 0px;
+  }
+
+  &__field--comment {
+    border: 2px solid $gray--darkest;
+    padding: 20px;
+    box-sizing: border-box;
+    @include text(17px, 18px);
+    color: $gray--lighten;
+  }
+}
+
+.order-note {
+  @include text(14px, 15px);
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.order__btn {
+    background-color: $color-background--lighten;
+    color: $gray;
+    border-color: $gray;
+}
+
+
+@media #{$tablet-widths} {
+
+  .order-form {
+
+    &__inner {
+      @include container(668px);
+      display: flex;
+      align-items: baseline;
+    }
+
+    &__block {
+      padding: 40px 0;
+    }
+
+    &__block--darken {
+      background-color: $color-background--darken;
+    }
+
+    &__title {
+      width: 167px;
+    }
+
+    &__title::after {
+      display: none;
+    }
+
+    &__group {
+      display: flex;
+      flex-wrap: wrap;
+      width: 500px;
+    }
+
+    input[type="radio"] + .order-block__item {
+      width: 500px;
+      padding-bottom: 30px;
+    }
+
+    input[type="checkbox"] + .order-block__item {
+      width: 250px;
+      padding-bottom: 30px;
+    }
+
+    &__group input[type="radio"] + label::before {
+      top: 10px;
+    }
+
+    &__group input[type="radio"]:checked + label::after {
+      top: 24px;
+    }
+
+    &__group input[type="text"] {
+      width: 100%;
+      padding-left: 20px;
+      margin-left: 20px;
+    }
+
+    &__group--inner {
+      width: 500px;
+      display: flex;
+      align-items: baseline;
+    }
+
+    &__add {
+      @include container(668px);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+  }
+
+  .order-block {
+
+    &__item--client {
+      width: 100px;
+    }
+
+    &__item--clientname {
+      width: 50px;
+    }
+
+    &__field {
+      padding-left: 15px;
+    }
+
+    &__field[type="tel"] {
+      background-color: $color-background--darken;
+    }
+
+    &__field[type="email"] {
+      background-color: $color-background--darken;
+    }
+
+    &__field--comment {
+      width: 100%;
+    }
+  }
+
+  .order__btn {
+    margin: 0;
+    order: -1;
+  }
+}
+
+@media #{$desktop-widths} {
+
+  .order-form {
+
+    &__inner {
+      @include container(1050px);
+    }
+
+    &__group {
+      width: 875px;
+    }
+
+    &__group--inner {
+      width: 700px;
+    }
+
+    &__add {
+      @include container(700px);
+
+    }
+  }
+
+  .order-block {
+    &__field[type="tel"] {
+      width: 700px;
+    }
+
+    &__field[type="email"] {
+      width: 700px;
+    }
+
+    &__field--comment {
+      width: 700px;
+    }
   }
 }

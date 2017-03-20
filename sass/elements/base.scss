@@ -45,8 +45,4 @@ img {
     h2 {
       @include title (53px, 57px);
     }
-
-    p {
-      @include text (17px, 30px);
-    }
   }

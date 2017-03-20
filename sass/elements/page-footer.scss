@@ -2,7 +2,7 @@
   background-color: $color-background--darken;
 
   &__inner {
-    padding: 4%;
+    @include container(260px);
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -15,130 +15,73 @@
 }
 
 .social {
-  width: 100%;
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 185px;
   @include border-bottom;
-  padding-bottom: 4%;
-  padding-top: 2%;
-  margin: 0;
+  padding: 20px 0;
 
   &__link {
   font-size: 0px;
-  padding: 2%;
-  }
-
-  &__img {
-    max-height: 35px;
-    /* как перебить img height=auto из base ?*/
   }
 }
 
 .copyright {
-
-  vertical-align: middle;
-  padding: 0;
-  padding-top: 4%;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  padding: 20px 0;
 
   p {
+    width: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0;
     @include title (18px, 19px);
   }
 
   &__link {
     font-size: 0px;
-    vertical-align: middle;
-  }
-
-  &__link img {
-    vertical-align: middle;
-    padding: 0;
-    padding-left: 20px;
   }
 }
 
 @media #{$tablet-widths} {
-
   .page-footer {
 
     &__inner {
-      flex-flow: row;
-      flex-wrap: nowrap;
+      @include container(668px);
+      align-items: center;
       justify-content: space-between;
     }
 
     &__logo {
-      display: flex;
-      flex-basis: 30%;
-      margin-top: auto;
-      margin-bottom: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 185px;
+      text-align: left;
     }
   }
 
   .social {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
+    width: 150px;
+    margin: auto;
     padding: 0;
-    border-bottom: 0;
-
-    &__link {
-      padding-bottom: 0;
-      padding: 0px 20px;
-    }
+    border: none;
   }
 
   .copyright {
-    display: flex;
-    flex-basis: 30%;
-
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 0;
+    width: 185px;
   }
 }
 
 @media #{$desktop-widths} {
-
   .page-footer {
 
     &__inner {
-      flex-flow: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
+      @include container(1050px);
     }
-
-    &__logo {
-      display: flex;
-      flex-basis: 30%;
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-  }
-
-  .social {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    padding: 0;
-    border-bottom: 0;
-
-    &__link {
-      padding-bottom: 0;
-      padding: 0px 20px;
-    }
-  }
-
-  .copyright {
-    display: flex;
-    flex-basis: 30%;
-
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 0;
   }
 }

@@ -1,6 +1,7 @@
 .about {
   &__inner {
-    padding: 4%;
+  @include container(260px);
+
   }
 
   &__title {
@@ -15,8 +16,7 @@
   }
 
   &__item {
-    padding-top: 50px;
-    width: 70%;
+    padding-top: 20px;
     @include title (15px, 24px);
 
     br {
@@ -30,57 +30,52 @@
 
   .about {
 
+    &__inner {
+      @include container(668px);
+    }
+
     &__title {
       @include title (43px, 50px);
     }
 
     &__list {
-      max-height: 500px;
       display: flex;
-      flex-flow: column;
       flex-wrap: wrap;
       align-content: baseline;
     }
 
     &__item {
-      padding-top: 100px;
+      padding-top: 50px;
       @include title(20px, 22px);
-      max-width: 45%;
+      width: 334px;
+    }
 
-      br {
-        display: inline;
-      }
+    &__item--eco,
+    &__item--handmade {
+      order: -2;
+    }
+
+    &__item--style,
+    &__item--local {
+      order: -1;
     }
   }
 }
 
-
 @media #{$desktop-widths} {
 
   .about {
-    padding-left: 13%;
+
+    &__inner {
+      @include container(1050px);
+    }
 
     &__title {
-      @include title (53px, 57px);
+      padding-left: 160px;
     }
 
     &__list {
-      max-height: 500px;
-      display: flex;
-      flex-flow: column;
-      flex-wrap: wrap;
-      align-content: baseline;
-    }
-
-    &__item {
-      padding-top: 100px;
-      @include title(20px, 22px);
-      max-width: 45%;
-
-      br {
-        display: inline;
-      }
+      padding-left: 160px;
     }
   }
-
 }

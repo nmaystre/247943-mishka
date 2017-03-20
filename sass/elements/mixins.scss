@@ -9,6 +9,19 @@
   margin: 0 auto;
 }
 
+@mixin container ($maxwidth) {
+  max-width: $maxwidth;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 @mixin title ($fontsize, $lineheight) {
   font-family: $font;
   font-size: $fontsize;
@@ -24,6 +37,9 @@
   font-weight: 400;
   color: $gray;
 }
+@mixin border-top {
+  border-top: 1px solid $gray--lightest;
+}
 
 @mixin border-bottom {
   border-bottom: 1px solid $gray--lightest;
@@ -31,6 +47,10 @@
 
 @mixin border-right {
   border-right: 1px solid $gray--lightest;
+}
+
+@mixin border-left {
+  border-left: 1px solid $gray--lightest;
 }
 
 @mixin border {

@@ -1,7 +1,7 @@
 .reviews {
 
   &__inner {
-    padding: 30px;
+    @include container (260px);
   }
 
   &__title {
@@ -52,116 +52,66 @@
 
 @media #{$tablet-widths} {
   .reviews {
+    padding-top: 80px;
 
     &__inner {
       position: relative;
-      padding: 4%;
+      @include container (668px);
       display: flex;
-      flex-flow: row;
       flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
     }
 
     &__title {
-      @include title (43px, 50px);
       padding: 0;
-      flex-basis: 50%;
+      @include title (43px, 50px);
+      width: 330px;
       order: -2;
     }
 
     &__footer {
-      margin: 0;
       display: flex;
-      flex-wrap: wrap;
-      max-width: 40%;
+      flex-direction: column;
     }
   }
 
   .review {
 
     &__btn {
+      width: 175px;
+      box-sizing: border-box;
       order: -1;
-      width: 170px;
-      align-self: center;
+      margin: 0;
     }
 
     &__text {
       @include text (17px, 30px);
-      width: 90%;
-    }
-
-    &__author {
-      flex-basis: 100%;
-    }
-
-    &__from {
-      flex-basis: 100%;
     }
 
     &__controls {
       position: absolute;
       content: "";
-      bottom: 30px;
-      right: 4%;
-      flex-basis: 40%;
+      bottom: 0px;
+      right: 0px;
     }
-    /*не смогла сделать стрелки на флексах */
   }
 }
 
 @media #{$desktop-widths} {
   .reviews {
-    padding-left: 13%;
 
     &__inner {
-      position: relative;
-      padding: 4%;
-      display: flex;
-      flex-flow: row;
-      flex-wrap: wrap;
+      @include container (1050px);
+      padding-left: 160px;
     }
 
     &__title {
       @include title (53px, 57px);
       padding: 0;
-      flex-basis: 50%;
-      order: -2;
     }
 
     &__footer {
-      margin: 0;
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 40%;
-    }
-  }
-
-  .review {
-
-    &__btn {
-      order: -1;
-      width: 170px;
-      align-self: center;
-    }
-
-    &__text {
-      @include text (17px, 30px);
-      width: 67%;
-    }
-
-    &__author {
-      flex-basis: 100%;
-    }
-
-    &__from {
-      flex-basis: 100%;
-    }
-
-    &__controls {
-      position: absolute;
-      content: "";
-      bottom: 30px;
-      right: 4%;
-      flex-basis: 40%;
     }
   }
 }
