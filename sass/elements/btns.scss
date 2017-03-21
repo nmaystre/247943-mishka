@@ -1,11 +1,10 @@
 .btn {
-  display: inline-block;
+  display: block;
   @include reset;
+  padding: 10px 20px;
   text-transform: uppercase;
-  padding: 10px;
-  width: 240px;
   @include center;
-  border: 3px solid $gray--darkest;
+  border: 2px solid $gray--darkest;
 
   font-family: "opensansbold", sans-serif;
   font-weight: bold;

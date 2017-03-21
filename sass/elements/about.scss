@@ -1,6 +1,7 @@
 .about {
   &__inner {
-    padding: 30px;
+  @include container(260px);
+
   }
 
   &__title {
@@ -15,8 +16,66 @@
   }
 
   &__item {
-    padding-top: 50px;
-    width: 70%;
+    padding-top: 20px;
     @include title (15px, 24px);
+
+    br {
+      display: none;
+    }
+  }
+}
+
+
+@media #{$tablet-widths} {
+
+  .about {
+
+    &__inner {
+      @include container(668px);
+    }
+
+    &__title {
+      @include title (43px, 50px);
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: baseline;
+    }
+
+    &__item {
+      padding-top: 50px;
+      @include title(20px, 22px);
+      width: 334px;
+    }
+
+    &__item--eco,
+    &__item--handmade {
+      order: -2;
+    }
+
+    &__item--style,
+    &__item--local {
+      order: -1;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+
+  .about {
+
+    &__inner {
+      @include container(1050px);
+    }
+
+    &__title {
+      padding-left: 160px;
+    }
+
+    &__list {
+      padding-left: 160px;
+    }
   }
 }

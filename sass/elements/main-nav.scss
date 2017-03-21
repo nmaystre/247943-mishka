@@ -1,27 +1,207 @@
 .main-nav {
+  position: relative;
+  z-index: 1;
+
 
   &__list {
+  /*  @include container(260px); */
     padding: 0px;
     margin: 0px;
   }
 
   &__item {
     list-style-type: none;
-    padding: 30px 60px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
     @include border-bottom;
  }
 
-  &__item:first-child {
-    border-top: 1px solid $gray--lightest;
+  &__promo {
+    display: none;
   }
 
-  &__item a,
-  &__search input {
+  &__logo {
+    position: relative;
+    padding: 20px 0px;
+  }
+
+  &__link {
   @include title(17px, 24px);
   text-decoration: none;
   }
 
-  &--closed &__item {
-    display: none;
+  &__toggle {
+    position: absolute;
+    right: 10%;
+    top: 7%;
+    @include title(0px, 0px);
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    z-index: 2;
+    background-color: transparent;
+  }
+
+}
+/* как лучле сгруппировать эти селекторы?
+все внутри .main nav как каша получается... */
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  width: 21px;
+  height: 2px;
+  background-color: $gray--darkest;
+  box-shadow: 0 6px 0 0 $gray--darkest,
+              0 12px 0 0 $gray--darkest;
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+  background-color: $gray;
+  box-shadow: 0 6px 0 0 $gray,
+              0 12px 0 0 $gray;
+}
+
+.main-nav--opened .main-nav__toggle {
+  position: absolute;
+  right: 10%;
+  top: 7%;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    width: 21px;
+    height: 2px;
+    background-color: $gray--darkest;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: $gray;
+  }
+}
+
+
+@media #{$tablet-widths} {
+
+  .main-nav {
+    padding: 0px 50px;
+
+    &__toggle {
+      display: none;
+    }
+
+    &__list {
+    @include container(668px);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    }
+
+    &__item {
+      margin: 0;
+      border-bottom: none;
+    }
+
+    &__link {
+      @include title(15px, 24px);
+    }
+
+    &__logo {
+      padding: 20px 0px;
+      min-width: 300px;
+      box-sizing: border-box;
+      border-top: none;
+      text-align: left;
+    }
+
+    &__catalog {
+      order: 1;
+      min-width: 167px;
+      border: none;
+      text-align: left;
+    }
+
+    &__knitting {
+      order: 1;
+      min-width: 167px;
+      border: none;
+    }
+
+    &__search {
+      min-width: 85px;
+      box-sizing: border-box;
+      @include border-right;
+      @include border-left;
+    }
+
+    &__link--search {
+      font-size: 0;
+      background: green;
+    }
+
+    &__cart {
+      flex-grow: 1;
+      text-align: right;
+    }
+  }
+}
+/* не понимаю как выровнять навигацию по ширине.
+при space-around последние блоки растягиются по всей длине */
+
+ @media #{$desktop-widths} {
+
+    .main-nav {
+
+      &__list {
+        @include container(1050px);
+
+      }
+
+      &__logo {
+        margin: auto;
+        text-align: center;
+        }
+
+      &__catalog {
+        min-width: 186px;
+        order: -1;
+        @include border-right;
+      }
+
+      &__knitting {
+        min-width: 186px;
+        order: -1;
+        text-align: left;
+        padding-left: 30px;
+      }
+
+      &__promo {
+        min-width: 186px;
+        text-align: left;
+        display: block;
+        min-width: 190px;
+      }
+
+      &__promo--sale {
+        padding-left: 30px;
+      }
   }
 }

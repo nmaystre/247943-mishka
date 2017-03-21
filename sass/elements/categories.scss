@@ -1,16 +1,14 @@
 .categories {
+
   @include title (18px, 24px);
+  background-color: $color-background--middle;
 }
 
 .category {
-  @include reset;
-
-  &-link {
-    display: inline-block;
-    width: 30%;
-    color: #ffffff;
-    text-decoration: none;
-   }
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
 
   &__item {
     padding: 30px;
@@ -23,5 +21,43 @@
 
   &__item:last-child {
     background-color: $color-secondary;
+  }
+
+  &-link {
+    display: block;
+    width: 260px;
+    margin: 0 auto;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: left;
+   }
+}
+/* как тут обойтись без br?
+Я не совсем поняла про вставку картинок к будущем.(((
+Они будут как блочно-строчные элементы?
+Тогда вроде нужна будет общая обертка для картинки и текста?*/
+
+@media #{$tablet-widths} {
+  .category {
+    @include container(668px);
+    flex-flow: row;
+    justify-content: center;
+    align-items: stretch;
+
+    &__item {
+      min-width: 334px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .category {
+    @include container(1050px);
+
+    &__item {
+      min-width: 525px;
+      box-sizing: border-box;
+    }
   }
 }

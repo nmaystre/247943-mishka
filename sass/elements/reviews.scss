@@ -1,7 +1,7 @@
 .reviews {
 
   &__inner {
-    padding: 30px;
+    @include container (260px);
   }
 
   &__title {
@@ -32,8 +32,11 @@
   }
 
   &__controls {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    min-width: 40%;
     @include reset;
+    font-size: 0;
   }
 
   &__controls-link {
@@ -42,5 +45,73 @@
     width: 50%;
     box-sizing: border-box;
     @include border;
+  }
+}
+
+
+
+@media #{$tablet-widths} {
+  .reviews {
+    padding-top: 80px;
+
+    &__inner {
+      position: relative;
+      @include container (668px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &__title {
+      padding: 0;
+      @include title (43px, 50px);
+      width: 330px;
+      order: -2;
+    }
+
+    &__footer {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .review {
+
+    &__btn {
+      width: 175px;
+      box-sizing: border-box;
+      order: -1;
+      margin: 0;
+    }
+
+    &__text {
+      @include text (17px, 30px);
+    }
+
+    &__controls {
+      position: absolute;
+      content: "";
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .reviews {
+
+    &__inner {
+      @include container (1050px);
+      padding-left: 160px;
+    }
+
+    &__title {
+      @include title (53px, 57px);
+      padding: 0;
+    }
+
+    &__footer {
+    }
   }
 }

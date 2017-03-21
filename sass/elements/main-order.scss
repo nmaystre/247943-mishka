@@ -1,11 +1,24 @@
-.main-order {
-  padding: 30px;
-}
-
 .order-description {
+  @include container(260px);
   @include text(13px, 24px);
 }
 
-.order__btn {
-    background-color: $color-primary--lighten;
+  @media #{$tablet-widths} {
+
+  .order-description {
+    padding: 70px 0px 10px;
+    @include text(17px, 30px);
+    margin: 0;
+    @include container(668px);
+
   }
+}
+
+
+@media #{$desktop-widths} {
+
+  .order-description {
+    @include container(700px);
+    padding-top: 120px;
+  }
+}

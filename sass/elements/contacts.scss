@@ -3,7 +3,7 @@
 .contacts {
 
   &__inner {
-    padding: 30px;
+    @include container(260px);
   }
 
   &__title {
@@ -12,17 +12,21 @@
     padding-top: 30px;
   }
 
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &__item {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
     padding-bottom: 40px;
-    display: inline-block;
   }
 
   &__field {
     @include reset;
-    width: 25%;
-    box-sizing: border-box;
-    padding-right: 40px;
-    vertical-align: top;
+    padding-right: 20px;
   }
 
   &__link {
@@ -36,8 +40,7 @@
   }
 
   &__text {
-    display: inline-block;
-    width: 60%;
+    width: 190px;
     box-sizing: border-box;
     @include reset;
     @include text (15px, 30px);
@@ -45,10 +48,68 @@
 
   &__map {
     overflow: hidden;
+    background-color: red;
   }
 
   &__btn {
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+
+@media #{$tablet-widths} {
+  .contacts {
+
+    &__inner {
+      @include container(668px);
+    }
+
+    &__wrapper {
+      align-items: baseline;
+    }
+
+    &__item {
+      width: 50%;
+    }
+
+    &__text {
+      width: 225px;
+    }
+
+    &__btn {
+      width: 230px;
+    }
+  }
+}
+
+@media #{$desktop-widths} {
+  .contacts {
+
+    &__inner {
+      @include container(1050px);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      width: 100%;
+      padding-left: 160px;
+    }
+
+    &__wrapper {
+      width: 50%;
+      padding-left: 160px;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+
+    &__item {
+      width: 350px;
+    }
+
+    &__map {
+      width: 50%;
+    }
   }
 }

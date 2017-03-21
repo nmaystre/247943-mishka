@@ -8,35 +8,52 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
-        </a>
-      </div>
-      <nav class="main-nav main-nav--closed min-nav--nojs">
+      <nav class="main-nav main-nav--closed main-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
         <ul class="main-nav__list">
-          <li class="main-nav__item">
-            <a href="catalog.html" class="main-nav__link">Каталог товаров</a>
+          <li class="main-nav__item main-nav__logo">
+            <a href="index.html" class="main-nav__link">
+              <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+            </a>
           </li>
-          <li class="main-nav__item">
-            <a href="#" class="main-nav__link">Вязание на заказ</a>
+          <li class="main-nav__item main-nav__catalog">
+            <a href="catalog.html" class="main-nav__link">
+              Каталог товаров
+            </a>
           </li>
-          <li class="main-nav__item">
-            <form class="main-nav__search">
+          <li class="main-nav__item main-nav__knitting">
+            <a class="main-nav__link">
+              Вязание на заказ
+            </a>
+          </li>
+          <li class="main-nav__item main-nav__search">
+            <a href="#" class="main-nav__link">
+              Поиск по сайту
+            </a>
+          <!--  <form class="main-nav__search">
               <input type="search" name="search" placeholder="Поиск по сайту" required>
               <button type="submit"></button>
-            </form>
+            </form> !-->
           </li>
-          <li class="main-nav__item">
-            <a class="main-nav__cart" href="#">
+          <li class="main-nav__item main-nav__cart">
+            <a class="main-nav__link" href="#">
               Корзина: <span>пока пуста</span>
+            </a>
+          </li>
+          <li class="main-nav__item main-nav__promo">
+            <a href="#" class="main-nav__link">
+              Новые поступления
+            </a>
+          </li>
+          <li class="main-nav__item main-nav__promo">
+            <a href="#" class="main-nav__link">
+              Распродажа
             </a>
           </li>
         </ul>
       </nav>
       <div class="intro">
-        <h1 class="intro__title">Вязание на заказ</h1>
+        <h1 class="intro__title">Каталог товаров</h1>
       </div>
     </header>
     <main class="main-order">
@@ -44,7 +61,7 @@
       <form class="order-form" action="https://echo.htmlacademy.ru/" method="get">
         <fieldset class="order-form__block">
           <div class="order-form__inner">
-            <legend class="order-form__title order-form__title--type">Тип</legend>
+            <h2 class="order-form__title order-form__title--type">Тип</h2>
             <div class="order-form__group">
               <input type="radio" id="typeaccessorise" name="type" value="accessorise" checked>
               <label for="typeaccessorise" class="order-block__item">Аксессуар для интерьера</label>
@@ -53,9 +70,9 @@
             </div>
           </div>
         </fieldset>
-        <fieldset class="order-form__block">
+        <fieldset class="order-form__block order-form__block--darken">
           <div class="order-form__inner">
-            <legend class="order-form__title order-form__title--color">Цвет</legend>
+            <h2 class="order-form__title order-form__title--color">Цвет</h2>
             <div class="order-form__group">
               <input type="checkbox" id="colorwhite" name="colorwhite" value="white" checked>
               <label for="colorwhite" class="order-block__item">Белый</label>
@@ -74,41 +91,52 @@
         </fieldset>
         <fieldset class="order-form__block">
           <div class="order-form__inner">
-            <legend class="order-form__title order-form__title--client">ФИО</legend>
+            <h2 class="order-form__title order-form__title--client">ФИО</h2>
             <div class="order-form__group">
-              <label for="fname" class="order-block__item">Ваше имя</label>
-              <input class="order-block__field" id="fname" type="text" placeholder="Введите ваше имя" name="fname"	required>
-              <label for="lname" class="order-block__item">Фамилия</label>
-              <input class="order-block__field" id="lname" type="text" placeholder="Укажите фамилию" name="lname" required>
-              <label for="mname" class="order-block__item">Отчество</label>
-              <input type="text" class="order-block__field" id="mname" name="mname" placeholder="Отчество, если желаете">
+              <div class="order-form__group--inner">
+                <label for="fname" class="order-block__item order-block__item--client order-block__item--clientname">Имя:</label>
+                <input class="order-block__field" id="fname" type="text" placeholder="Введите ваше имя" name="fname"	required>
+              </div>
+              <div class="order-form__group--inner">
+                <label for="lname" class="order-block__item order-block__item--client">Фамилия:</label>
+                <input class="order-block__field" id="lname" type="text" placeholder="Укажите фамилию" name="lname" required>
+              </div>
+              <div class="order-form__group--inner">
+                <label for="mname" class="order-block__item order-block__item--client">Отчество:</label>
+                <input type="text" class="order-block__field" id="mname" name="mname" placeholder="Отчество, если желаете">
+              </div>
             </div>
           </div>
         </fieldset>
-        <fieldset class="order-form__block">
-            <div class="order-form__inner">
-              <legend class="order-form__title order-form__title--mobile">Тел</legend>
+        <fieldset class="order-form__block order-form__block--darken">
+            <div class="order-form__inner order-form__inner--mobile">
+              <h2 class="order-form__title order-form__title--mobile">Тел</h2>
               <input class="order-block__field" type="tel" placeholder="+7 XXX XXX XX XX" name="mobile" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
             </div>
         </fieldset>
-        <fieldset class="order-form__block">
+        <fieldset class="order-form__block order-form__block--darken">
           <div class="order-form__inner">
-            <legend class="order-form__title order-form__title--email">Email</legend>
+            <h2 class="order-form__title order-form__title--email">Email</h2>
               <input class="order-block__field" type="email" placeholder="Ваш Email" name="email" required>
             </div>
         </fieldset>
         <fieldset class="order-form__block">
           <div class="order-form__inner">
-            <legend class="order-form__title order-form__title--comment">Доп</legend>
-            <textarea name="text" rows="6" cols="30">Опишите все ваши пожелания к заказу</textarea>
+            <h2 class="order-form__title order-form__title--comment">Доп</h2>
+            <textarea class="order-block__field--comment" name="text" rows="6" cols="22">Опишите все ваши пожелания&nbsp;к&nbsp;заказу</textarea>
           </div>
         </fieldset>
-        <p class="order-note"><sup>*</sup>Поля обязательны для заполнения</p>
-        <button type="submit" class="order__btn btn">Отправить заказ</button>
+        <div class="order-form__add">
+          <p class="order-note"><sup>*</sup>Поля обязательны для заполнения</p>
+          <button type="submit" class="order__btn btn">Отправить заказ</button>
+        </div>
       </form>
     </main>
     <footer class="page-footer">
       <div class="page-footer__inner">
+        <div class="page-footer__logo">
+          <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+        </div>
         <section class="social">
           <a href="#" class="social__link social__link--in">Мы в Instagram<img src="img/icon-insta.svg"  width="30" height="30" alt="Instagram"></a>
           <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="img/icon-fb.svg"  width="30" height="30" alt="Facebook"></a>
