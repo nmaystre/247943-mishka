@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
-    <title>Мишка</title>
+    <title>Мишка: милые штуки ручной работы для дома</title>
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -13,16 +13,16 @@
         <ul class="main-nav__list">
           <li class="main-nav__item main-nav__logo">
             <a  class="main-nav__link">
-              <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+              <img src="img/logo-mobile.svg" alt="Mishka">
             </a>
           </li>
           <li class="main-nav__item main-nav__catalog">
-            <a href="catalog.html" class="main-nav__link">
+            <a href="catalog.html" class="main-nav__link main-nav__link--catalog">
               Каталог товаров
             </a>
           </li>
           <li class="main-nav__item main-nav__knitting">
-            <a href="form.html" class="main-nav__link">
+            <a href="form.html" class="main-nav__link main-nav__link--knitting">
               Вязание на заказ
             </a>
           </li>
@@ -38,7 +38,7 @@
           !-->
           </li>
           <li class="main-nav__item main-nav__cart">
-            <a class="main-nav__link" href="#">
+            <a class="main-nav__link main-nav__link--cart" href="#">
               Корзина: <span>пока пуста</span>
             </a>
           </li>
@@ -55,20 +55,18 @@
         </ul>
       </nav>
       <div class="intro intro--index">
-        <div class="intro__inner intro__inner--index">
           <p class="intro__delivery">Бесплатная доставка по России</p>
           <h1 class="intro__title">Милые штуки ручной работы&nbsp;для дома</h1>
-        </div>
       </div>
     </header>
     <main class="main-page">
       <div class="categories">
         <ul class="category">
           <li class="category__item">
-            <a href="#" class="category-link">Предметы <br>интерьера</a>
+            <a href="#" class="category__link">Предметы <br>интерьера</a>
           </li>
           <li class="category__item">
-            <a href="#" class="category-link">Детские <br>игрушки</a>
+            <a href="#" class="category__link">Детские <br>игрушки</a>
           </li>
         </ul>
       </div>
@@ -142,11 +140,11 @@
       <section class="contacts">
         <div class="contacts__inner">
           <div class="contacts__title">
-            <h2 class="main_subtitle">Контакты</h2>
+            <h2 class="contacts__subtitle">Контакты</h2>
           </div>
           <div class="contacts__wrapper">
             <div class="contacts__item">
-              <span class="contacts__field">email:</span>
+              <span class="contacts__field">e-mail:</span>
               <a href="mailto:info@mimimishkashop.ru" class="contacts__link">info@mimimishkashop.ru</a>
             </div>
             <div class="contacts__item">

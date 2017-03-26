@@ -8,10 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   @include border;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 
   &__description {
-    padding: 25px;
+    padding: 17px 25px 21px 27px;
+    width: 210px;
+
+    cursor: pointer;
   }
 
   &__description-header {
@@ -26,12 +29,16 @@
   &__text {
     @include reset;
     @include text (13px, 30px);
+    padding-top: 5px;
   }
 
   &__description-order {
     @include border-top;
     vertical-align: middle;
     padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
   }
 
   &__price {
@@ -43,14 +50,25 @@
   }
 }
 
+.catalog-item:hover {
+  @include shadow--hover;
+}
+
+.catalog-item:active {
+  @include shadow--down;
+}
+
 
 @media #{$tablet-widths} {
 
   .catalog {
     @include container(668px);
+    padding-top: 76px;
+
   }
 
   .catalog-item {
+      margin-bottom: 54px;
 
       &__link {
         order: -1;
@@ -62,9 +80,14 @@
       &__description {
         width: 330px;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
+      /*  flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
+        align-content: space-between; */
+      }
+
+      &__description-header {
+        padding-top: 10px;
       }
 
       &__name {
@@ -76,8 +99,6 @@
       }
 
       &__description-order {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
       }
 
@@ -93,13 +114,36 @@
     @include container(1050px);
     display: flex;
     flex-wrap: wrap;
+    padding-top: 135px;
   }
 
   .catalog-item {
     width: 315px;
+
+    &__link {
+      height: 462px;
+    }
+
+    &__description {
+      padding-top: 15px;
+      }
+
+    &__description-header {
+      padding-bottom: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      min-height: 100px;
+    }
+
+    &__description-order {
+      padding-top: 15px;
+    }
+
   }
 
   .catalog-item:not(:nth-of-type(3n)) {
-    margin-right: 30px;
+    margin-right: 49px;
   }
 }

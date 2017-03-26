@@ -1,7 +1,7 @@
 .btn {
   display: block;
   @include reset;
-  padding: 10px 20px;
+  padding: 13px 20px;
   text-transform: uppercase;
   @include center;
   border: 2px solid $gray--darkest;
@@ -11,4 +11,20 @@
   font-size: 17px;
   line-height: 20px;
   color: #000000;
+
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: $gray;
+  border-color: $gray;
+  color: $color-background--lighten;
+
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: $gray;
+  border-color: $gray;
+  color: $gray--lighten;
 }

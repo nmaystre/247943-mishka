@@ -66,3 +66,12 @@
   height: $lineheight;
   background-color: $linecolor;
 }
+
+@mixin shadow--hover {
+  box-shadow: 0 4px 10px 0 $gray--lightest;
+}
+
+@mixin shadow--down {
+  box-shadow: 0 4px 3px 0 $gray--lightest;
+
+}

@@ -11,7 +11,7 @@
 
   &__item {
     list-style-type: none;
-    padding: 30px 0;
+    padding: 28px 0;
     box-sizing: border-box;
     margin: auto;
     text-align: center;
@@ -30,6 +30,16 @@
   &__link {
   @include title(17px, 24px);
   text-decoration: none;
+  }
+
+  &__link:hover {
+    color: $biglink-color--hover;
+    cursor: pointer;
+  }
+
+  &__link:active {
+    color: $biglink-color--down;
+    cursor: pointer;
   }
 
   &__toggle {
@@ -118,6 +128,8 @@
     &__item {
       margin: 0;
       border-bottom: none;
+      padding: 35px 0px 25px;
+
     }
 
     &__link {
@@ -125,8 +137,8 @@
     }
 
     &__logo {
-      padding: 20px 0px;
-      min-width: 300px;
+      padding: 22px 0px 10px;
+      width: 320px;
       box-sizing: border-box;
       border-top: none;
       text-align: left;
@@ -134,19 +146,22 @@
 
     &__catalog {
       order: 1;
-      min-width: 167px;
+      width: 152px;
       border: none;
       text-align: left;
+      padding-top: 18px;
     }
 
     &__knitting {
       order: 1;
-      min-width: 167px;
+      width: 167px;
       border: none;
+      padding-top: 18px;
+
     }
 
     &__search {
-      min-width: 85px;
+      width: 85px;
       box-sizing: border-box;
       @include border-right;
       @include border-left;
@@ -155,6 +170,10 @@
     &__link--search {
       font-size: 0;
       background: green;
+    }
+
+    &__link--cart {
+      font-size: 17px;
     }
 
     &__cart {
@@ -172,7 +191,15 @@
 
       &__list {
         @include container(1050px);
+      }
 
+      &__item {
+        padding: 30px 0px 15px;
+      }
+
+      &__link--catalog,
+      &__link--knitting {
+        font-size: 17px;
       }
 
       &__logo {
@@ -198,6 +225,7 @@
         text-align: left;
         display: block;
         min-width: 190px;
+        padding-top: 25px;
       }
 
       &__promo--sale {
