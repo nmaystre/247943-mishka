@@ -8,8 +8,12 @@
 
   &__title {
     @include reset;
-    @include title (25px, 30px);
-    padding-top: 30px;
+    padding-top: 75px;
+    padding-bottom: 15px;
+  }
+
+  &__subtitle {
+    @include title (18px, 30px);
   }
 
   &__wrapper {
@@ -21,12 +25,12 @@
     width: 100%;
     display: flex;
     align-items: baseline;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
   }
 
   &__field {
     @include reset;
-    padding-right: 20px;
+    padding-right: 28px;
   }
 
   &__link {
@@ -37,6 +41,18 @@
 
   &__link::after {
     @include underline (-5px, 1px, $color-primary);
+  }
+
+  &__link:hover {
+    color: $color-primary;
+  }
+
+  &__link:active {
+    color: $mail-link--down;
+  }
+
+  &__link:active::after {
+    background-color: $mail-link--down;
   }
 
   &__text {
@@ -52,8 +68,8 @@
   }
 
   &__btn {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 38px;
+    margin-bottom: 40px;
   }
 }
 
@@ -65,12 +81,24 @@
       @include container(668px);
     }
 
+    &__title {
+      padding-top: 96px;
+      padding-bottom: 45px;
+    }
+
+    &__subtitle {
+      @include title(43px, 50px);
+      margin: 0;
+    }
+
     &__wrapper {
       align-items: baseline;
+      padding-bottom: 30px;
     }
 
     &__item {
       width: 50%;
+      @include text(17px, 30px);
     }
 
     &__text {
@@ -78,7 +106,9 @@
     }
 
     &__btn {
-      width: 230px;
+      width: 190px;
+      margin-top: 48px;
+      margin-bottom: 58px;
     }
   }
 }

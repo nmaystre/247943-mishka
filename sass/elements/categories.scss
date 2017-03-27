@@ -11,7 +11,7 @@
   flex-flow: column;
 
   &__item {
-    padding: 30px;
+    padding: 28px;
     list-style-type: none;
   }
 
@@ -19,11 +19,22 @@
     background-color: $color-primary;
   }
 
+  &__item:first-child:hover,
+  &__item:first-child:active {
+    background-color: $color-primary--lighten;
+  }
+
   &__item:last-child {
     background-color: $color-secondary;
   }
 
-  &-link {
+  &__item:last-child:hover,
+  &__item:last-child:active {
+    background-color: $color-secondary--lighten;
+
+  }
+
+  &__link {
     display: block;
     width: 260px;
     margin: 0 auto;
@@ -31,6 +42,15 @@
     text-decoration: none;
     text-align: left;
    }
+
+   &__link:first-child:active {
+     color: $color-primary--lightest;
+   }
+
+   &__link:first-child:active {
+     color: $color-secondary--lightest;
+   }
+
 }
 /* как тут обойтись без br?
 Я не совсем поняла про вставку картинок к будущем.(((
@@ -47,6 +67,11 @@
     &__item {
       min-width: 334px;
       box-sizing: border-box;
+    }
+
+    &__link {
+      padding-top: 5px;
+      padding-bottom: 10px;
     }
   }
 }

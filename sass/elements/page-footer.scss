@@ -18,9 +18,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 185px;
+  width: 100%;
   @include border-bottom;
-  padding: 20px 0;
+  padding: 20px 42px;
 
   &__link {
   font-size: 0px;
@@ -54,6 +54,8 @@
       @include container(668px);
       align-items: center;
       justify-content: space-between;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     &__logo {

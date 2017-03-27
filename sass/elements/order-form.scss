@@ -14,6 +14,7 @@
   &__title {
     position: relative;
     padding-top: 20px;
+    padding-bottom: 10px;
     margin: 0;
     @include title (16px, 17px);
     text-transform: uppercase;
@@ -42,6 +43,8 @@
     width: 100%;
   }
 
+
+
   &__group input[type="checkbox"],
   &__group input[type="radio"]{
     display: none;
@@ -51,16 +54,27 @@
   &__group input[type="radio"] + label::before {
     position: absolute;
     content: "";
-    top: 8px;
+    bottom: 10px;;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border: 2px solid $gray;
   }
 
   &__group input[type="radio"] + label::before {
     border-radius: 50%;
-    top: 15px;
+    top: 16px;
+    left: 2px;
+}
+
+&__group input[type="checkbox"] + label:hover::before,
+&__group input[type="radio"] + label:hover::before {
+  border-color: $input;
+}
+
+&__group input[type="checkbox"] + label:active::before,
+&__group input[type="radio"] + label:active::before {
+  border-color: $input-down;
 }
 
   &__group input[type="radio"]:checked + label::after {
@@ -70,61 +84,89 @@
     left: 14px;
     width: 16px;
     height: 16px;
-    background-color: $color-primary;
+    background-color: $input;
     border-radius: 50%;
   }
 
   &__group input[type="checkbox"]:checked + label::after {
     position: absolute;
     content: "";
-    top: 15px;
-    left: 7px;
-    width: 30px;
-    height: 30px;
-    background-image: url(/img/icon-tick.svg);
-    background-position: center;
-    background-repeat: no-repeat;
+    top: 16px;
+    left: 16px;
+    width: 10px;
+    height: 20px;
+    transform: rotate(45deg);
+    border-bottom: 2px solid $gray--darkest;
+    border-right: 2px solid $gray--darkest;
   }
-
-  /*hover и тд сделаю позже */
 
   &__group input[type="text"] {
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid $gray--darkest;
-    padding: 15px 0px;
+    padding: 13px 0px;
+    outline:none;
+    font-size: 17px;
+  }
+
+  &__group input[type="text"]:hover,
+  &__group input[type="text"]:focus {
+    border-color: $input;
+  }
+
+  &__group input[type="text"]:active {
+    border-color: $input;
+  }
+
+  &__field[type="text"]::-webkit-input-placeholder {
+    color: $input-placeholder;
+  }
+  &__field[type="text"]::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &__field[type="text"]:-moz-placeholder{
+    color: $input-placeholder;
+  }
+  &__field[type="text"]:-ms-input-placeholder{
+    color: $input-placeholder;
   }
 
   .order-block__item--client {
     padding-left: 0px;
     padding-bottom: 0px;
+    padding-top: 20px;
+    min-height: 20px;
   }
 
   &__title--mobile {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 23px;
+    padding-bottom: 8px;
   }
 
   &__title--mobile::after {
-    top: 48px;
+    top: 32px;
+    width: 195px;
   }
 
   &__title--email {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 35px;
+    padding-bottom: 5px;
   }
 
   &__title--email::after {
-    top: 48px;
+    top: 40px;
+    width: 177px;
   }
 
   &__title--comment {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 18px;
   }
 
 &__title--comment::after {
-    top: 48px;
+    top: 38px;
+    width: 197px;
+
   }
 
   &__add {
@@ -136,10 +178,10 @@
 
   &__item {
     position: relative;
-    display: inline-block;
-    width: 200px;
-    padding: 20px 0 20px 60px;
-    box-sizing: border-box;
+    display: block;
+    width: 250px;
+    min-height: 40px;
+    padding: 22.5px 0 0px 72px;
     @include title (17px, 18px);
   }
 
@@ -149,6 +191,25 @@
     border: none;
     border-bottom: 2px solid $gray--darkest;
     padding: 15px 0px;
+    outline:none;
+  }
+
+  &__field[type="tel"]:hover,
+  &__field[type="tel"]:focus {
+    border-color: $input;
+  }
+
+  &__field[type="tel"]::-webkit-input-placeholder {
+    color: $input-placeholder;
+  }
+  &__field[type="tel"]::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &__field[type="tel"]:-moz-placeholder{
+    color: $input-placeholder;
+  }
+  &__field[type="tel"]:-ms-input-placeholder{
+    color: $input-placeholder;
   }
 
   &__field[type="email"] {
@@ -157,24 +218,51 @@
     border: none;
     border-bottom: 2px solid $gray--darkest;
     padding: 15px 0px;
+    outline:none;
+  }
+
+  &__field[type="email"]:hover,
+  &__field[type="email"]:focus {
+    border-color: $input;
+  }
+
+  &__field[type="email"]::-webkit-input-placeholder {
+    color: $input-placeholder;
+  }
+  &__field[type="email"]::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &__field[type="email"]:-moz-placeholder{
+    color: $input-placeholder;
+  }
+  &__field[type="email"]:-ms-input-placeholder{
+    color: $input-placeholder;
   }
 
   &__field--comment {
     border: 2px solid $gray--darkest;
-    padding: 20px;
+    padding: 16px;
     box-sizing: border-box;
     @include text(17px, 18px);
-    color: $gray--lighten;
+    color: $input-placeholder;
+    outline:none;
+  }
+
+  &__field--comment:hover {
+    border-color: $input;
   }
 }
 
 .order-note {
   @include text(14px, 15px);
-  padding-bottom: 20px;
-  padding-top: 20px;
+  margin: 0;
+  padding-bottom: 30px;
+  padding-top: 14px;
 }
 
 .order__btn {
+    margin: 0 auto;
+    width: 260px;
     background-color: $color-background--lighten;
     color: $gray;
     border-color: $gray;
@@ -184,6 +272,7 @@
 @media #{$tablet-widths} {
 
   .order-form {
+    margin-bottom: 45px;
 
     &__inner {
       @include container(668px);
@@ -192,7 +281,7 @@
     }
 
     &__block {
-      padding: 40px 0;
+      padding: 40px 0 30px;
     }
 
     &__block--darken {
@@ -200,7 +289,7 @@
     }
 
     &__title {
-      width: 167px;
+      width: 187px;
     }
 
     &__title::after {
@@ -215,20 +304,49 @@
 
     input[type="radio"] + .order-block__item {
       width: 500px;
-      padding-bottom: 30px;
+      padding-bottom: 16px;
+      @include title(19px,18px)
     }
 
     input[type="checkbox"] + .order-block__item {
-      width: 250px;
-      padding-bottom: 30px;
+      width: 50%;
+    }
+
+    &__group input[type="checkbox"] + label::before,
+    &__group input[type="radio"] + label::before {
+      bottom: 13px;
+      left: -16px;
+      width: 50px;
+      height: 50px;
+    }
+
+    &__group input[type="checkbox"]:checked + label::after {
+      top: 16px;
+      left: 0px;
+      width: 20px;
+      height: 30px;
+    }
+
+    &__group input[type="checkbox"] + label:nth-of-type(2n)::before {
+      left: 4px;
+    }
+
+    &__group input[type="checkbox"]:checked + label:nth-of-type(2n)::after {
+      left: 20px;
     }
 
     &__group input[type="radio"] + label::before {
-      top: 10px;
+      height: 48px;
+      width: 48px;
+      top: 8px;
+      left: -2px;
     }
 
     &__group input[type="radio"]:checked + label::after {
-      top: 24px;
+      height: 20px;
+      width: 20px;
+      top: 23px;
+      left: 14px;
     }
 
     &__group input[type="text"] {
@@ -243,15 +361,58 @@
       align-items: baseline;
     }
 
+    &__inner--client {
+      padding-top: 8px;
+    }
+
+    &__group--inner-lname {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &__group--inner-mname {
+      padding-bottom: 20px;
+    }
+
+    &__title--mobile {
+      padding-top: 26px;
+    }
+
     &__add {
       @include container(668px);
       display: flex;
       align-items: baseline;
       justify-content: space-between;
     }
+
+    &__block--mobile {
+      padding: 40px 0px 0px;
+    }
+
+    &__block--email {
+      padding: 5px 0px 50px;
+    }
+
+    &__title--comment {
+      width: 220px;
+    }
   }
 
   .order-block {
+
+    &__item {
+      @include title(19px, 19px);
+    }
+
+    &__item--color {
+      padding: 24px 10px 34px 62px;
+      box-sizing: border-box;
+    }
+
+    &__item--color:nth-of-type(even) {
+      padding-right: 0px;
+      padding-left: 82px;
+    }
 
     &__item--client {
       width: 100px;
@@ -267,20 +428,30 @@
 
     &__field[type="tel"] {
       background-color: $color-background--darken;
+      width: 500px;
+      font-size: 17px;
     }
 
     &__field[type="email"] {
       background-color: $color-background--darken;
+      width: 500px;
+      font-size: 17px;
     }
 
     &__field--comment {
       width: 100%;
+      margin-bottom: 20px;
     }
   }
 
   .order__btn {
     margin: 0;
     order: -1;
+    width: 230px;
+  }
+
+  .order-note {
+    font-size: 17px;
   }
 }
 
@@ -299,6 +470,51 @@
     &__group--inner {
       width: 700px;
     }
+
+    &__title {
+      text-align: center;
+      width: 170px;
+    }
+
+    &__input {
+      padding-left: 90px;
+    }
+
+    input[type="radio"] + .order-block__item {
+      padding-top: 20px;
+      padding-left: 90px;
+    }
+
+    input[type="radio"] + label::before {
+      left: 7px;
+      top: 3px;
+    }
+
+    input[type="radio"]:checked + label::after {
+      left: 21px;
+      top: 21px;
+    }
+
+    input[type="checkbox"] + .order-block__item {
+      width: 260px;
+      padding-left: 90px;
+    }
+
+      &__group input[type="checkbox"] + label::before {
+        left: 10px;
+      }
+
+      &__group input[type="checkbox"] + label:nth-of-type(2n)::before {
+        left: 10px;
+      }
+
+      &__group input[type="checkbox"]:checked + label::after {
+        left: 25px;
+      }
+
+      &__group input[type="checkbox"]:checked + label:nth-of-type(2n)::after {
+        left: 25px;
+      }
 
     &__add {
       @include container(700px);
