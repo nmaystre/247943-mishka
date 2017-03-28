@@ -8,12 +8,10 @@
   display: flex;
   flex-wrap: wrap;
   @include border;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 
   &__description {
     padding: 17px 25px 21px 27px;
-    width: 210px;
-
     cursor: pointer;
   }
 
@@ -63,7 +61,7 @@
 
   .catalog {
     @include container(668px);
-    padding-top: 76px;
+    padding-top: 65px;
 
   }
 
@@ -73,17 +71,17 @@
       &__link {
         order: -1;
         width: 334px;
-        background-color: red;
-        height: 333px; /* потом удалю */
+        height: 334px;
       }
 
       &__description {
-        width: 330px;
         box-sizing: border-box;
-      /*  flex-direction: row;
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
         justify-content: space-between;
-        align-content: space-between; */
+        align-items: flex-start;
+
       }
 
       &__description-header {
@@ -99,6 +97,7 @@
       }
 
       &__description-order {
+        width: 100%;
         align-items: center;
       }
 
@@ -114,14 +113,21 @@
     @include container(1050px);
     display: flex;
     flex-wrap: wrap;
-    padding-top: 135px;
+    padding-top: 125px;
   }
 
   .catalog-item {
     width: 315px;
+    flex-direction: column;
+    flex-wrap: nowrap;
 
     &__link {
+      width: auto;
       height: 462px;
+    }
+
+    &__link img {
+      width: 100%
     }
 
     &__description {

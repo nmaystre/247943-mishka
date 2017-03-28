@@ -1,4 +1,5 @@
 .reviews {
+  padding-bottom: 50px;
 
   &__inner {
     @include container (260px);
@@ -37,33 +38,97 @@
     min-width: 40%;
     @include reset;
     font-size: 0;
-    margin: 33px 0px 38px;
+    margin: 28px 0px 38px;
   }
 
   &__controls-link {
+    position: relative;
     display: block;
     padding: 12px;
     width: 50%;
     box-sizing: border-box;
     @include border;
   }
+
+  &__controls-link::before {
+    position: absolute;
+    content: "";
+    top: 22px;
+    left: 40px;
+    width: 50px;
+    height: 4px;
+    background-color: $gray--darkest;
+  }
+
+  &__controls-link::after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 42px;
+    width: 14px;
+    height: 14px;
+    border-left: 4px solid $gray--darkest;
+    border-bottom: 4px solid $gray--darkest;
+    transform: rotate(45deg);
+  }
+
+  &__controls-link:last-child::after {
+    transform: rotate(-135deg);
+    left: 70px;
+  }
+
+  &__controls-link:hover::before {
+    background-color: $arrow-color--hover;
+  }
+
+  &__controls-link:hover::after {
+    border-color: $arrow-color--hover;
+  }
+
+  &__controls-link:active::before {
+    background-color: $arrow-color--active;
+  }
+
+  &__controls-link:active::after {
+    border-color: $arrow-color--active;
+  }
+
 }
 
 
 
 @media #{$tablet-widths} {
   .reviews {
-    padding-top: 80px;
+    padding-top: 85px;
+    padding-bottom: 60px;
 
     &__inner {
       position: relative;
+      padding-top: 80px;
+      padding-bottom: 50px;
       @include container (668px);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-end;
-      padding-top: 85px;
-      margin-bottom: 100px;
+    }
+
+    &__inner::after {
+      position: absolute;
+      content: "";
+      top: 0px;
+      left: -40px;
+      height: 100%;
+      width: 350px;
+      background-image: url(/img/review@1x.jpg);
+      background-position: -50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+
+      @media #{$retina} {
+        background-image: url(/img/review@2x.jpg);
+      }
     }
 
     &__title {
@@ -85,18 +150,19 @@
       width: 175px;
       box-sizing: border-box;
       order: -1;
-      margin: 0;
+      margin-right: -5px;
+      margin-bottom: -5px;
     }
 
     &__text {
       @include text (17px, 30px);
-      padding: 45px 0 60px;
+      padding: 50px 0 60px;
     }
 
     &__controls {
       position: absolute;
       content: "";
-      bottom: 0px;
+      bottom: 45px;
       right: 0px;
       margin: 0;
       min-width: 167px;
@@ -104,16 +170,39 @@
 
     &__controls-link {
       width: 83px;
+      border: none;
+    }
+
+    &__controls-link::before {
+      top: 14px;
+      left: 15px;
+    }
+
+    &__controls-link::after {
+      top: 7px;
+      left: 17px;
+    }
+
+    &__controls-link:last-child::after {
+      top: 7px;
+      left: 45px;
     }
   }
 }
 
 @media #{$desktop-widths} {
   .reviews {
+    padding-bottom: 85px;
 
     &__inner {
       @include container (1050px);
-      padding-left: 160px;
+      padding-left: 170px;
+      padding-bottom: 80px;
+    }
+
+    &__inner::after {
+      left: 0px;
+      top: 10px;
     }
 
     &__title {
@@ -122,6 +211,18 @@
     }
 
     &__footer {
+    }
+  }
+
+  .review {
+    &__text {
+      padding-top: 50px;
+      padding-right: 80px;
+      padding-bottom: 40px;
+    }
+
+    &__controls {
+      bottom: 80px;
     }
   }
 }

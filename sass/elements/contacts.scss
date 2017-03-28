@@ -1,6 +1,8 @@
 /* contacts */
 
 .contacts {
+  padding-top: 20px;
+  padding-bottom: 45px;
 
   &__inner {
     @include container(260px);
@@ -8,11 +10,11 @@
 
   &__title {
     @include reset;
-    padding-top: 75px;
     padding-bottom: 15px;
   }
 
   &__subtitle {
+    position: relative;
     @include title (18px, 30px);
   }
 
@@ -25,7 +27,7 @@
     width: 100%;
     display: flex;
     align-items: baseline;
-    padding-bottom: 30px;
+    padding-bottom: 35px;
   }
 
   &__field {
@@ -40,7 +42,7 @@
   }
 
   &__link::after {
-    @include underline (-5px, 1px, $color-primary);
+    @include underline (0px, 1px, $color-primary);
   }
 
   &__link:hover {
@@ -63,32 +65,64 @@
   }
 
   &__map {
-    overflow: hidden;
-    background-color: red;
+    padding-bottom: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__map--pic {
+    margin: 0 auto;
+    width: 320px;
+    height: auto;
+    padding-bottom: 38px;
   }
 
   &__btn {
-    margin-top: 38px;
-    margin-bottom: 40px;
+    width: 260px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 }
 
 
 @media #{$tablet-widths} {
   .contacts {
+    padding-bottom: 55px;
 
     &__inner {
       @include container(668px);
     }
 
     &__title {
-      padding-top: 96px;
+      padding-top: 45px;
       padding-bottom: 45px;
     }
 
     &__subtitle {
       @include title(43px, 50px);
       margin: 0;
+    }
+
+    &__subtitle::before {
+      position: absolute;
+      content: "";
+      top: -13px;
+      right: 0px;
+      width: 0;
+  	  height: 0;
+  	  border-top: 20px solid transparent;
+  	  border-left: 40px solid $color-primary;
+  	  border-bottom: 20px solid transparent;
+    }
+
+    &__subtitle::after {
+      position: absolute;
+      content: "";
+      top: -15px;
+      right: 40px;
+      width: 4px;
+  	  height: 80px;
+  	  background-color: $gray--darkest;
     }
 
     &__wrapper {
@@ -105,33 +139,59 @@
       width: 225px;
     }
 
+    &__map {
+      padding-bottom: 45px;
+    }
+
     &__btn {
-      width: 190px;
-      margin-top: 48px;
-      margin-bottom: 58px;
+      width: 230px;
     }
   }
 }
 
 @media #{$desktop-widths} {
   .contacts {
+    padding-bottom: 110px;
 
     &__inner {
+      position: relative;
       @include container(1050px);
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
+      padding-top: 80px;
     }
 
     &__title {
-      width: 100%;
-      padding-left: 160px;
+      width: 50%;
+      padding-left: 170px;
+      box-sizing: border-box;
+    }
+
+    &__subtitle {
+      @include title(53px, 57px);
+    }
+
+    &__subtitle::before {
+      top: -7px;
+      left: -96px;
+    }
+
+    &__subtitle::after {
+      top: -10px;
+      left: -106px;
     }
 
     &__wrapper {
       width: 50%;
-      padding-left: 160px;
+      padding-left: 175px;
+      padding-bottom: 45px;
       box-sizing: border-box;
       flex-direction: column;
+    }
+
+    &__text {
+      @include text(17px, 30px);;
     }
 
     &__item {
@@ -139,7 +199,15 @@
     }
 
     &__map {
+      position: absolute;
+      top: 55px;
+      right: 0px;
       width: 50%;
+    }
+
+    &__btn {
+      margin: 0px;
+      margin-left: 180px;
     }
   }
 }

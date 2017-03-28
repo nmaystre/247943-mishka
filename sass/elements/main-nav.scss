@@ -22,7 +22,7 @@
     display: none;
   }
 
-  &__logo {
+  &__item--logo {
     position: relative;
     padding: 20px 0px;
   }
@@ -54,10 +54,24 @@
     z-index: 2;
     background-color: transparent;
   }
-
 }
-/* как лучле сгруппировать эти селекторы?
-все внутри .main nav как каша получается... */
+
+.icon {
+
+  &--logo {
+    width: 90px;
+    height: 40px;
+  }
+
+  &--logo-s {
+    display: inline-block;;
+  }
+
+  &--logo-m,
+  &--logo-l {
+    display: none;
+  }
+}
 
 .main-nav--closed .main-nav__toggle::before {
   content: "";
@@ -129,14 +143,13 @@
       margin: 0;
       border-bottom: none;
       padding: 35px 0px 25px;
-
     }
 
     &__link {
       @include title(15px, 24px);
     }
 
-    &__logo {
+    &__item--logo {
       padding: 22px 0px 10px;
       width: 320px;
       box-sizing: border-box;
@@ -181,6 +194,23 @@
       text-align: right;
     }
   }
+
+  .icon {
+
+    &--logo {
+      width: 115px;
+      height: 50px;
+    }
+
+    &--logo-m {
+      display: inline-block;;
+    }
+
+    &--logo-s,
+    &--logo-l {
+      display: none;
+    }
+  }
 }
 /* не понимаю как выровнять навигацию по ширине.
 при space-around последние блоки растягиются по всей длине */
@@ -202,8 +232,9 @@
         font-size: 17px;
       }
 
-      &__logo {
-        margin: auto;
+      &__item--logo {
+        margin: 0 auto;
+        padding: 0;
         text-align: center;
         }
 
@@ -231,5 +262,22 @@
       &__promo--sale {
         padding-left: 30px;
       }
+  }
+
+  .icon {
+
+    &--logo {
+      width: 150px;
+      height: 80px;
+    }
+
+    &--logo-l {
+      display: inline-block;;
+    }
+
+    &--logo-s,
+    &--logo-m {
+      display: none;
+    }
   }
 }

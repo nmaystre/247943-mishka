@@ -11,9 +11,13 @@
       <nav class="main-nav main-nav--closed main-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
         <ul class="main-nav__list">
-          <li class="main-nav__item main-nav__logo">
+          <li class="main-nav__item main-nav__item--logo">
             <a  class="main-nav__link">
-              <img src="img/logo-mobile.svg" alt="Mishka">
+              <svg class="icon icon--logo" width="170px" height="85px">
+                <use class="icon--logo-s" xlink:href="#icon-logo-s" ></use>
+                <use class="icon--logo-m" xlink:href="#icon-logo-m" ></use>
+                <use class="icon--logo-l" xlink:href="#icon-logo-l" ></use>
+              </svg>
             </a>
           </li>
           <li class="main-nav__item main-nav__catalog">
@@ -27,6 +31,9 @@
             </a>
           </li>
           <li class="main-nav__item main-nav__search">
+            <svg class="icon icon--search" width="20px" height="20px">
+              <use class="icon--search" xlink:href="#icon-search" ></use>
+            </svg>
             <a href="#" class="main-nav__link main-nav__link--search">
               Поиск по сайту
             </a>
@@ -38,6 +45,9 @@
           !-->
           </li>
           <li class="main-nav__item main-nav__cart">
+            <svg class="icon icon--cart" width="20px" height="20px">
+              <use class="icon--cart" xlink:href="#icon-cart" ></use>
+            </svg>
             <a class="main-nav__link main-nav__link--cart" href="#">
               Корзина: <span>пока пуста</span>
             </a>
@@ -56,7 +66,7 @@
       </nav>
       <div class="intro intro--index">
           <p class="intro__delivery">Бесплатная доставка по России</p>
-          <h1 class="intro__title">Милые штуки ручной работы&nbsp;для дома</h1>
+          <h1 class="intro__title intro__title--index">Милые штуки ручной работы&nbsp;для дома</h1>
       </div>
     </header>
     <main class="main-page">
@@ -64,12 +74,19 @@
         <ul class="category">
           <li class="category__item">
             <a href="#" class="category__link">Предметы <br>интерьера</a>
+            <svg class="icon icon--category" width="50px" height="40px">
+              <use class="icon--category-interior" xlink:href="#icon-category-interior"></use>
+            </svg>
           </li>
           <li class="category__item">
             <a href="#" class="category__link">Детские <br>игрушки</a>
+            <svg class="icon icon--category" width="50px" height="63px">
+              <use class="icon--category-toy" xlink:href="#icon-category-toy"></use>
+            </svg>
           </li>
         </ul>
       </div>
+      <div class="decoration decoration--fill"></div>
       <article class="featured">
         <div class="featured__inner">
           <div class="featured__header">
@@ -94,7 +111,22 @@
             </table>
           </div>
           <div class="featured__image">
-            <img src="img/triple-set-mobile@1x.jpg"  width="260" height="315" alt="Вязаные корзинки">
+            <picture>
+
+
+              <source
+                media="(min-width: 1200px)"
+                srcset="img/triple-set-desktop@1x.jpg 1x,
+                        img/triple-set-desktop@2x.jpg 2x">
+              <source
+                media="(min-width: 768px)"
+                srcset="img/triple-set-tablet@1x.jpg 1x,
+                        img/triple-set-tablet@2x.jpg 2x">
+
+                        <img
+                          src="img/triple-set-mobile@1x.jpg" alt="triple set"
+                          srcset="img/triple-set-mobile@2x.jpg 2x">
+            </picture>
           </div>
           <div class="featured__footer">
             <p class="featured__price">Цена: 990 руб.</p>
@@ -102,16 +134,47 @@
           </div>
         </div>
       </article>
+      <div class="decoration"></div>
       <section class="about">
         <div class="about__inner">
           <h2 class="about__title">Коротко о нас:</h2>
           <ul class="about__list">
-            <li class="about__item about__item--eco">Экологически чистые&nbsp;материалы</li>
-            <li class="about__item about__item--style">Скандинавский стиль по&nbsp;российской цене</li>
-            <li class="about__item about__item--like">Увеличивает лайки на&nbsp;фотографиях</li>
-            <li class="about__item about__item--handmade">Связано вручную с любовью&nbsp;и&nbsp;умилением</li>
-            <li class="about__item about__item--local">Поддержка&nbsp;отечественного производителя</li>
-            <li class="about__item about__item--delivery">Поставляется в подарочной&nbsp;упаковке</li>
+            <li class="about__item about__item--eco">
+              <svg class="icon icon--about" width="50px" height="40px">
+                <use class="icon--about-eco" xlink:href="#icon-about-eco"></use>
+              </svg>
+              Экологически чистые&nbsp;материалы
+            </li>
+            <li class="about__item about__item--style">
+              <svg class="icon icon--about" width="50px" height="40px">
+                <use class="icon--about-style" xlink:href="#icon-about-style"></use>
+              </svg>
+              Скандинавский стиль по&nbsp;российской цене
+            </li>
+            <li class="about__item about__item--like">
+              <svg class="icon icon--about" width="50px" height="40px">
+                <use class="icon--about-like" xlink:href="#icon-about-like"></use>
+              </svg>
+              Увеличивает лайки на&nbsp;фотографиях
+            </li>
+            <li class="about__item about__item--handmade">
+              <svg class="icon icon--about" width="50px" height="40px">
+                <use class="icon--about-handmade" xlink:href="#icon-about-handmade"></use>
+              </svg>
+              Связано вручную с любовью&nbsp;и&nbsp;умилением
+            </li>
+            <li class="about__item about__item--local">
+              <svg class="icon icon--about" width="50px" height="40px">
+                <use class="icon--about-local" xlink:href="#icon-about-local"></use>
+              </svg>
+              Поддержка&nbsp;отечественного производителя
+            </li>
+            <li class="about__item about__item--delivery">
+              <svg class="icon icon--about" width="50px" height="40px">
+                <use class="icon--about-delivery" xlink:href="#icon-about-delivery"></use>
+              </svg>
+              Поставляется в подарочной&nbsp;упаковке
+            </li>
           </ul>
         </div>
       </section>
@@ -137,6 +200,7 @@
           <a href="#" class="review__btn btn">Написать</a>
         </div>
       </section>
+      <div class="decoration"></div>
       <section class="contacts">
         <div class="contacts__inner">
           <div class="contacts__title">
@@ -149,32 +213,63 @@
             </div>
             <div class="contacts__item">
               <span class="contacts__field">адрес:</span>
-              <p class="contacts__text">г. Санкт-Петербург, ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8, офис 101</p>
+              <p class="contacts__text">г. Санкт-Петербург, ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8,&nbsp;офис 101</p>
             </div>
           </div>
           <div class="contacts__map">
-            <img src="img/map-mobile@1x.jpg"  width="320" height="460" alt="Как нас найти">
-          </div>
+            <picture>
+              <source
+                media="(min-width: 1200px)"
+                srcset="img/map-desktop@1x.jpg 1x,
+                        img/map-desktop@2x.jpg 2x">
+              <source
+                media="(min-width: 768px)"
+                srcset="img/map-tablet@1x.jpg 1x,
+                        img/map-tablet@2x.jpg 2x">
+
+                        <img
+                          src="img/map-mobile@1x.jpg" alt="map"
+                          srcset="img/map-mobile@2x.jpg 2x">
+            </picture>          </div>
           <a href="#" class="contacts__btn btn">Напишите нам</a>
         </div>
-      </section>
+        </section>
     </main>
     <footer class="page-footer">
       <div class="page-footer__inner">
         <div class="page-footer__logo">
-          <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+          <svg class="icon icon--logo-footer" width="105px" height="40px">
+            <use class="icon--logo-s" xlink:href="#icon-logo-s"></use>
+          </svg>
         </div>
         <section class="social">
-          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="img/icon-insta.svg"  width="30" height="30" alt="Instagram"></a>
-          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="img/icon-fb.svg"  width="30" height="30" alt="Facebook"></a>
-          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="img/icon-twitter.svg"  width="30" height="30" alt="Twitter"></a>
+          <a href="#" class="social__link social__link--in">
+            Мы в Instagram
+            <svg class="icon icon--social" width="30px" height="30px">
+              <use class="icon--social-in" xlink:href="#icon-social-in"></use>
+            </svg>
+          </a>
+          <a href="#" class="social__link social__link--fb">
+            Мы в Facebook
+            <svg class="icon icon--social" width="30px" height="30px">
+              <use class="icon--social-fb" xlink:href="#icon-social-fb"></use>
+            </svg>
+            </a>
+          <a href="#" class="social__link social__link--tw">
+            Мы в Twitter
+            <svg class="icon icon--social" width="30px" height="30px">
+              <use class="icon--social-tw" xlink:href="#icon-social-tw"></use>
+            </svg>
+            </a>
         </section>
         <section class="copyright">
           <p>
             Разработано
             <a href="#" class="copyright__link">в HTML Academy
-              <img src="img/logo-htmlacademy.svg"  width="35" height="35" alt="htmlacademy">
-            </a>
+              <svg class="icon icon--copyright" width="30px" height="35px">
+                <use xlink:href="#icon-copyright"></use>
+              </svg>
+              </a>
           </p>
         </section>
       </div>

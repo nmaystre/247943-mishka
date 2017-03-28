@@ -1,5 +1,7 @@
 $tablet-widths: "(min-width: 768px)";
 $desktop-widths: "(min-width: 1050px)";
+$retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+
 
 $font-primary: opensans;
 $font-back: arial, sans-serif;
@@ -33,8 +35,8 @@ $biglink-color--down: rgba($gray--darkest, 0.3);
 /* arrow clr */
 
 $arrow-color: $gray--darkest;
-$arrow-color--hover: rgba($gray--darkest, 0.5);
-$arrow-color--hover: rgba($gray--darkest, 0.25);
+$arrow-color--hover: #666666;
+$arrow-color--active: #b2b2b2;
 
 /* mail link */
 

@@ -20,7 +20,7 @@
   align-items: center;
   width: 100%;
   @include border-bottom;
-  padding: 20px 42px;
+  padding: 20px 42px 30px;
 
   &__link {
   font-size: 0px;
@@ -54,8 +54,8 @@
       @include container(668px);
       align-items: center;
       justify-content: space-between;
-      padding-top: 30px;
-      padding-bottom: 30px;
+      padding-top: 35px;
+      padding-bottom: 35px;
     }
 
     &__logo {

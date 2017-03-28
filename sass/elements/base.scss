@@ -22,7 +22,6 @@ img {
   height: auto;
 }
 
-
 @media #{$tablet-widths} {
   h1 {
     @include title (43px, 50px);
