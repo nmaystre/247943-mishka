@@ -45,11 +45,18 @@
     @include title (17px, 17px);
     @include border;
     margin: 0;
-
   }
 
   &__item:last-child {
     margin-right: 0;
+  }
+
+  &__item:hover {
+    border-color: $input-down;
+  }
+
+  input[type="radio"]:checked + label {
+    border-color: $color-primary;
   }
 
   &__btn {

@@ -1,6 +1,6 @@
 
 .order-form {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 
   &__block {
     border: none;
@@ -159,14 +159,13 @@
   }
 
   &__title--comment {
-    padding-top: 30px;
-    padding-bottom: 18px;
+    padding-top: 32px;
+    padding-bottom: 25px;
   }
 
 &__title--comment::after {
-    top: 38px;
+    top: 40px;
     width: 197px;
-
   }
 
   &__add {

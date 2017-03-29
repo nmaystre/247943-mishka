@@ -11,9 +11,13 @@
       <nav class="main-nav main-nav--closed main-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
         <ul class="main-nav__list">
-          <li class="main-nav__item main-nav__logo">
+          <li class="main-nav__item main-nav__item--logo">
             <a href="index.html" class="main-nav__link">
-              <img src="img/logo-mobile.svg" alt="Mishka">
+              <svg class="icon icon--logo" width="170px" height="85px">
+                <use class="icon--logo-s" xlink:href="#icon-logo-s" ></use>
+                <use class="icon--logo-m" xlink:href="#icon-logo-m" ></use>
+                <use class="icon--logo-l" xlink:href="#icon-logo-l" ></use>
+              </svg>
             </a>
           </li>
           <li class="main-nav__item main-nav__catalog">
@@ -27,6 +31,9 @@
             </a>
           </li>
           <li class="main-nav__item main-nav__search">
+            <svg class="icon icon--search" width="20px" height="20px">
+              <use class="icon--search" xlink:href="#icon-search" ></use>
+            </svg>
             <a href="#" class="main-nav__link main-nav__link--search">
               Поиск по сайту
             </a>
@@ -38,6 +45,9 @@
           !-->
           </li>
           <li class="main-nav__item main-nav__cart">
+            <svg class="icon icon--cart" width="20px" height="20px">
+              <use class="icon--cart" xlink:href="#icon-cart" ></use>
+            </svg>
             <a class="main-nav__link main-nav__link--cart" href="#">
               Корзина: <span>пока пуста</span>
             </a>
@@ -138,19 +148,38 @@
     <footer class="page-footer">
       <div class="page-footer__inner">
         <div class="page-footer__logo">
-          <img src="img/logo-mobile.svg"  width="110" height="60" alt="Mishka">
+          <svg class="icon icon--logo-footer" width="105px" height="40px">
+            <use class="icon--logo-s" xlink:href="#icon-logo-s"></use>
+          </svg>
         </div>
         <section class="social">
-          <a href="#" class="social__link social__link--in">Мы в Instagram<img src="img/icon-insta.svg"  width="30" height="30" alt="Instagram"></a>
-          <a href="#" class="social__link social__link--fb">Мы в Facebook<img src="img/icon-fb.svg"  width="30" height="30" alt="Facebook"></a>
-          <a href="#" class="social__link social__link--tw">Мы в Twitter<img src="img/icon-twitter.svg"  width="30" height="30" alt="Twitter"></a>
+          <a href="#" class="social__link social__link--in">
+            Мы в Instagram
+            <svg class="icon icon--social" width="30px" height="30px">
+              <use class="icon--social-in" xlink:href="#icon-social-in"></use>
+            </svg>
+          </a>
+          <a href="#" class="social__link social__link--fb">
+            Мы в Facebook
+            <svg class="icon icon--social" width="30px" height="30px">
+              <use class="icon--social-fb" xlink:href="#icon-social-fb"></use>
+            </svg>
+            </a>
+          <a href="#" class="social__link social__link--tw">
+            Мы в Twitter
+            <svg class="icon icon--social" width="30px" height="30px">
+              <use class="icon--social-tw" xlink:href="#icon-social-tw"></use>
+            </svg>
+            </a>
         </section>
         <section class="copyright">
           <p>
             Разработано
             <a href="#" class="copyright__link">в HTML Academy
-              <img src="img/logo-htmlacademy.svg"  width="35" height="35" alt="htmlacademy">
-            </a>
+              <svg class="icon icon--copyright" width="30px" height="35px">
+                <use xlink:href="#icon-copyright"></use>
+              </svg>
+              </a>
           </p>
         </section>
       </div>
