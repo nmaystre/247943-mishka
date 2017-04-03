@@ -1,8 +1,7 @@
-
 .featured {
-    position: relative;
-    padding-bottom: 41px;
-    @include text (15px, 25px);
+  position: relative;
+  padding-bottom: 41px;
+  @include text (15px, 25px);
 
   &__inner {
     @include container(260px);
@@ -47,12 +46,11 @@
   &__image {
     overflow: hidden;
     @include center;
-    padding: 0;
-    padding-top: 28px;
+    padding: 28px 0 0;
   }
 
   &__footer {
-  @include center;
+    @include center;
   }
 
   &__price {
@@ -66,12 +64,9 @@
     @include zigzag-line(5px);
   }
 }
-
-
-
 @media #{$tablet-widths} {
   .featured {
-    padding-bottom: 75px;
+    padding-bottom: 65px;
 
     &__inner {
       @include container(668px);
@@ -95,7 +90,6 @@
       padding: 0;
     }
 
-
     &__label {
       width: 10%;
       text-align: center;
@@ -111,15 +105,15 @@
     }
 
     &__text {
-      padding: 0px 0 35px;
+      padding: 0 0 35px;
     }
 
     &__value {
-      padding: 7px 0px;
+      padding: 7px 0;
     }
 
     &__image {
-      padding: 10px 0px 0px;
+      padding: 10px 0 0;
       width: 50%;
       height: 400px;
 
@@ -132,13 +126,13 @@
     &__footer {
       position: absolute;
       content: "";
-      bottom: 0px;
-      left: 0px;
+      bottom: 0;
+      left: 0;
     }
 
     &__price {
       @include title(20px,24px);
-      padding: 35px 0px;
+      padding: 35px 0;
     }
 
     &__btn {
@@ -151,7 +145,6 @@
     }
   }
 }
-
 @media #{$desktop-widths} {
   .featured {
     padding-bottom: 100px;
@@ -171,7 +164,6 @@
       top: 105px;
       left: 30px;
       justify-content: space-around;
-
     }
 
     &__title {
@@ -181,8 +173,7 @@
 
     &__label {
       order: -1;
-      padding: 0;
-      padding-right: 23px;
+      padding: 0 23px 0 0;
       @include title (17px, 17px);
       color: $color-primary;
     }
@@ -208,7 +199,7 @@
 
     &__footer {
       left: 175px;
-      bottom: 0px;
+      bottom: 0;
     }
   }
 }

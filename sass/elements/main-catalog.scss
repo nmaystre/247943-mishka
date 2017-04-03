@@ -1,7 +1,6 @@
 .catalog {
   padding-top: 30px;
   @include container(260px);
-
 }
 
 .catalog-item {
@@ -13,7 +12,6 @@
   &__description {
     width: 100%;
     padding: 20px 25px 29px 27px;
-    cursor: pointer;
   }
 
   &__description-header {
@@ -23,6 +21,15 @@
   &__name {
     @include reset;
     @include title (17px, 24px);
+    cursor: pointer;
+  }
+
+  &__name:hover {
+    color: $biglink-color--hover;
+  }
+
+  &__name:active {
+    color: $biglink-color--down;
   }
 
   &__text {
@@ -35,22 +42,39 @@
     @include border-top;
     vertical-align: middle;
     padding-top: 20px;
-
     display: flex;
     justify-content: space-between;
   }
 
   &__price {
     @include title (15px, 24px);
+    cursor: pointer;
+  }
+
+  &__price:hover {
+    color: $biglink-color--hover;
+  }
+
+  &__price:active {
+    color: $biglink-color--down;
   }
 
   &__buy {
     font-size: 0;
+    cursor: pointer;
   }
 
-  .icon--cart {
-    margin-right: 0;
+   &__buy:hover .icon--cart {
+    fill: $color-primary;
   }
+
+  &__buy:active .icon--cart {
+   fill: rgba($color-primary, 0.5);
+ }
+
+ .icon--cart {
+   margin-right: 0;
+ }
 }
 
 .catalog-item:hover {
@@ -60,73 +84,67 @@
 .catalog-item:active {
   @include shadow--down;
 }
-
-
 @media #{$tablet-widths} {
-
   .catalog {
     @include container(668px);
     padding-top: 65px;
-
   }
 
   .catalog-item {
-      margin-bottom: 54px;
+    margin-bottom: 49px;
 
-      &__link {
-        order: -1;
-        width: 334px;
-        height: 334px;
+    &__link {
+      order: -1;
+      width: 334px;
+      min-height: 334px;
+      cursor: pointer;
 
-        cursor: pointer;
-
-
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      &__description {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 16px 25px 26px 27px;
-      }
-
-      &__description-header {
-        padding-top: 10px;
-      }
-
-      &__name {
-        @include title(20px, 24px);
-      }
-
-      &__text {
-        @include text(15px, 30px);
-      }
-
-      &__description-order {
+      img {
         width: 100%;
-        align-items: center;
+        height: auto;
       }
+    }
 
-      &__price {
-        @include title(17px, 20px);
-        padding-left: 5px;
-      }
+    &__description {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 auto;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 16px 25px 26px 27px;
+      width: 330px;
+    }
 
-      &__buy {
-        padding-right: 5px;
-      }
+    &__description-header {
+      padding-top: 10px;
+    }
+
+    &__name {
+      @include title(20px, 24px);
+    }
+
+    &__text {
+      @include text(15px, 30px);
+    }
+
+    &__description-order {
+      width: 100%;
+      align-items: center;
+      padding-bottom: 5px;
+    }
+
+    &__price {
+      @include title(17px, 20px);
+      padding-left: 5px;
+    }
+
+    &__buy {
+      padding-right: 5px;
+    }
   }
 }
-
 @media #{$desktop-widths} {
-
   .catalog {
     @include container(1050px);
     display: flex;
@@ -146,26 +164,25 @@
     }
 
     &__link img {
-      width: 100%
+      width: 100%;
     }
 
     &__description {
       padding-top: 15px;
-      }
+    }
 
     &__description-header {
-      padding-bottom: 0px;
-      display: flex;
+      padding-bottom: 0;
+      /* display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-content: flex-start;
+      align-content: flex-start; */
       min-height: 100px;
     }
 
     &__description-order {
       padding-top: 15px;
     }
-
   }
 
   .catalog-item:not(:nth-of-type(3n)) {

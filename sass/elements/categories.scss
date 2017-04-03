@@ -1,5 +1,4 @@
 .categories {
-
   @include title (18px, 24px);
   background-color: $color-background--middle;
 }
@@ -13,7 +12,7 @@
 
   &__item {
     width: 100%;
-    padding: 0px;
+    padding: 0;
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -23,8 +22,8 @@
     background-color: $color-primary;
   }
 
-  &__item:first-child:hover,
-  &__item:first-child:active {
+  &__item:first-child:active,
+  &__item:first-child:hover {
     background-color: $color-primary--lighten;
   }
 
@@ -32,37 +31,36 @@
     background-color: $color-secondary;
   }
 
-  &__item:last-child:hover,
-  &__item:last-child:active {
+  &__item:last-child:active,
+  &__item:last-child:hover {
     background-color: $color-secondary--lighten;
   }
 
   &__link {
     display: inline-block;
     width: 210px;
-    padding: 27px 0px 28px 30px;
+    padding: 27px 0 28px 30px;
     color: #ffffff;
     text-decoration: none;
-   }
+  }
 
-   &__link:first-child:active {
-     color: $color-primary--lightest;
-   }
+  &__link:first-child:active {
+    color: $color-primary--lightest;
+  }
 
-   &__link:first-child:active {
-     color: $color-secondary--lightest;
-   }
+  &__link:first-child:active {
+    color: $color-secondary--lightest;
+  }
 }
 /* как тут обойтись без br?
 Я не совсем поняла про вставку картинок к будущем.(((
 Они будут как блочно-строчные элементы?
 Тогда вроде нужна будет общая обертка для картинки и текста?*/
-
 .icon--category {
   width: 70px;
   height: 65px;
   fill: rgba($main-category, 0.9);
-  padding: 23px 30px 0px;
+  padding: 23px 30px 0;
 }
 
 .category__item:hover .icon--category {
@@ -72,8 +70,6 @@
 .category__item:active .icon--category {
   fill: rgba($main-category, 0.2);
 }
-
-
 @media #{$tablet-widths} {
   .categories {
     position: relative;
@@ -90,7 +86,6 @@
     flex-flow: row;
     justify-content: center;
     height: 118px;
-
 
     &__item {
       min-width: 334px;
@@ -114,7 +109,6 @@
     padding-top: 30px;
   }
 }
-
 @media #{$desktop-widths} {
   .category {
     @include container(1050px);

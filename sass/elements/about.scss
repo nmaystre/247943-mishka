@@ -2,8 +2,7 @@
   padding-top: 30px;
 
   &__inner {
-  @include container(260px);
-
+    @include container(260px);
   }
 
   &__title {
@@ -26,10 +25,7 @@
     }
   }
 }
-
-
 @media #{$tablet-widths} {
-
   .about {
     padding-top: 50px;
 
@@ -58,15 +54,13 @@
       order: -2;
     }
 
-    &__item--style,
-    &__item--local {
+    &__item--local,
+    &__item--style {
       order: -1;
     }
   }
 }
-
 @media #{$desktop-widths} {
-
   .about {
     padding-top: 55px;
 
@@ -76,11 +70,10 @@
 
     &__title {
       @include title(53px, 57px);
-      padding-left: 0px;
+      padding-left: 0;
       text-align: left;
     }
 
-    &__list {
-    }
+    &__list {}
   }
 }

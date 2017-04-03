@@ -1,20 +1,20 @@
 /* navigation */
 
-var navMain = document.querySelector('.main-nav');
-var navToggle = document.querySelector('.main-nav__toggle');
+var navMain = document.querySelector(".main-nav");
+var navToggle = document.querySelector(".main-nav__toggle");
 
 console.log(navToggle);
-navMain.classList.remove('main-nav--nojs');
+navMain.classList.remove("main-nav--nojs");
 
-navToggle.addEventListener('click', function() {
+navToggle.addEventListener("click", function() {
   console.log(navToggle);
 
-  if (navMain.classList.contains('main-nav--closed')) {
-    navMain.classList.remove('main-nav--closed');
-    navMain.classList.add('main-nav--opened');
+  if (navMain.classList.contains("main-nav--closed")) {
+    navMain.classList.remove("main-nav--closed");
+    navMain.classList.add("main-nav--opened");
   } else {
-    navMain.classList.add('main-nav--closed');
-    navMain.classList.remove('main-nav--opened');
+    navMain.classList.add("main-nav--closed");
+    navMain.classList.remove("main-nav--opened");
   }
 });
 
@@ -38,6 +38,6 @@ popupBackground.addEventListener("click", function() {
 
 /* map */
 
-var mapPic = document.querySelector('.contacts__picture');
+var mapPic = document.querySelector(".contacts__picture");
 
-mapPic.classList.add('visually-hidden');
+mapPic.classList.add("visually-hidden");

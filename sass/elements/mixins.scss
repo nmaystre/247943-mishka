@@ -3,25 +3,21 @@
   padding: 0;
   text-decoration: none;
 }
-
 @mixin center {
   text-align: center;
   margin: 0 auto;
 }
-
 @mixin container ($maxwidth) {
   max-width: $maxwidth;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
-
 @mixin inner {
   max-width: 1050px;
   margin: 0 auto;
   width: 100%;
 }
-
 @mixin title ($fontsize, $lineheight) {
   font-family: $font;
   font-size: $fontsize;
@@ -29,7 +25,6 @@
   font-weight: 700;
   color: $gray--darkest;
 }
-
 @mixin text ($fontsize, $lineheight) {
   font-family: $font;
   font-size: $fontsize;
@@ -40,65 +35,54 @@
 @mixin border-top {
   border-top: 1px solid $gray--lightest;
 }
-
 @mixin border-bottom {
   border-bottom: 1px solid $gray--lightest;
 }
-
 @mixin border-right {
   border-right: 1px solid $gray--lightest;
 }
-
 @mixin border-left {
   border-left: 1px solid $gray--lightest;
 }
-
 @mixin border {
   border: 1px solid $gray--lightest;
 }
-
-@mixin underline ($bottom, $lineheight, $linecolor){
+@mixin underline ($bottom, $lineheight, $linecolor) {
   position: absolute;
   content: "";
   bottom: $bottom;
-  left:0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   height: $lineheight;
   background-color: $linecolor;
 }
-
 @mixin shadow--hover {
   box-shadow: 0 4px 10px 0 $gray--lightest;
 }
-
 @mixin shadow--down {
   box-shadow: 0 4px 3px 0 $gray--lightest;
 }
-
 @mixin zigzag-fill ($zig-height) {
   position: absolute;
   content: "";
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
   height: $zig-height;
   width: 100%;
-
-  background-image: url(/img/bg-zigzag-fill.svg);
+  background-image: url("../img/bg-zigzag-fill.svg");
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
   z-index: 1;
 }
-
 @mixin zigzag-line ($zig-height) {
   position: absolute;
   content: "";
-  bottom: 0px;
-  left: 0px;
-
+  bottom: 0;
+  left: 0;
   height: $zig-height;
   width: 100%;
-  background-image: url(/img/bg-zigzag-line.svg);
+  background-image: url("../img/bg-zigzag-line.svg");
   background-size: auto $zig-height;
   background-position: center;
   background-repeat: repeat-x;

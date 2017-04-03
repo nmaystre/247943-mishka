@@ -1,4 +1,3 @@
-
 .order-form {
   margin-bottom: 55px;
 
@@ -30,9 +29,7 @@
     width: 200px;
     background-color: $color-primary;
   }
-
   /* если я делаю ширину 100% то она перекрывает надпись */
-
   &__group {
     display: flex;
     flex-wrap: wrap;
@@ -43,10 +40,8 @@
     width: 100%;
   }
 
-
-
   &__group input[type="checkbox"],
-  &__group input[type="radio"]{
+  &__group input[type="radio"] {
     display: none;
   }
 
@@ -64,18 +59,18 @@
   &__group input[type="radio"] + label::before {
     border-radius: 50%;
     top: 13px;
-    left: 0px;
-}
+    left: 0;
+  }
 
-&__group input[type="checkbox"] + label:hover::before,
-&__group input[type="radio"] + label:hover::before {
-  border-color: $input;
-}
+  &__group input[type="checkbox"] + label:hover::before,
+  &__group input[type="radio"] + label:hover::before {
+    border-color: $input;
+  }
 
-&__group input[type="checkbox"] + label:active::before,
-&__group input[type="radio"] + label:active::before {
-  border-color: $input-down;
-}
+  &__group input[type="checkbox"] + label:active::before,
+  &__group input[type="radio"] + label:active::before {
+    border-color: $input-down;
+  }
 
   &__group input[type="radio"]:checked + label::after {
     position: absolute;
@@ -104,13 +99,13 @@
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid $gray--darkest;
-    padding: 13px 0px;
-    outline:none;
+    padding: 13px 0;
+    outline: none;
     font-size: 17px;
   }
 
-  &__group input[type="text"]:hover,
-  &__group input[type="text"]:focus {
+  &__group input[type="text"]:focus,
+  &__group input[type="text"]:hover {
     border-color: $input;
   }
 
@@ -121,13 +116,16 @@
   &__field[type="text"]::-webkit-input-placeholder {
     color: $input-placeholder;
   }
+
   &__field[type="text"]::-moz-placeholder {
     color: $input-placeholder;
   }
-  &__field[type="text"]:-moz-placeholder{
+
+  &__field[type="text"]:-moz-placeholder {
     color: $input-placeholder;
   }
-  &__field[type="text"]:-ms-input-placeholder{
+
+  &__field[type="text"]:-ms-input-placeholder {
     color: $input-placeholder;
   }
 
@@ -156,7 +154,7 @@
     padding-bottom: 25px;
   }
 
-&__title--comment::after {
+  &__title--comment::after {
     top: 40px;
     width: 197px;
   }
@@ -166,8 +164,8 @@
   }
 
   .order-block__item--client {
-    padding-left: 0px;
-    padding-bottom: 0px;
+    padding-left: 0;
+    padding-bottom: 0;
     padding-top: 20px;
     min-height: 20px;
   }
@@ -186,13 +184,12 @@
 }
 
 .order-block {
-
   &__item {
     position: relative;
     display: block;
     width: 250px;
     min-height: 40px;
-    padding: 21.5px 0 0px 63px;
+    padding: 21.5px 0 0 63px;
     @include title (17px, 18px);
     cursor: pointer;
   }
@@ -206,25 +203,28 @@
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid $gray--darkest;
-    padding: 15px 0px;
-    outline:none;
+    padding: 15px 0;
+    outline: none;
   }
 
-  &__field[type="tel"]:hover,
-  &__field[type="tel"]:focus {
+  &__field[type="tel"]:focus,
+  &__field[type="tel"]:hover {
     border-color: $input;
   }
 
   &__field[type="tel"]::-webkit-input-placeholder {
     color: $input-placeholder;
   }
+
   &__field[type="tel"]::-moz-placeholder {
     color: $input-placeholder;
   }
-  &__field[type="tel"]:-moz-placeholder{
+
+  &__field[type="tel"]:-moz-placeholder {
     color: $input-placeholder;
   }
-  &__field[type="tel"]:-ms-input-placeholder{
+
+  &__field[type="tel"]:-ms-input-placeholder {
     color: $input-placeholder;
   }
 
@@ -233,25 +233,28 @@
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid $gray--darkest;
-    padding: 15px 0px;
-    outline:none;
+    padding: 15px 0;
+    outline: none;
   }
 
-  &__field[type="email"]:hover,
-  &__field[type="email"]:focus {
+  &__field[type="email"]:focus,
+  &__field[type="email"]:hover {
     border-color: $input;
   }
 
   &__field[type="email"]::-webkit-input-placeholder {
     color: $input-placeholder;
   }
+
   &__field[type="email"]::-moz-placeholder {
     color: $input-placeholder;
   }
-  &__field[type="email"]:-moz-placeholder{
+
+  &__field[type="email"]:-moz-placeholder {
     color: $input-placeholder;
   }
-  &__field[type="email"]:-ms-input-placeholder{
+
+  &__field[type="email"]:-ms-input-placeholder {
     color: $input-placeholder;
   }
 
@@ -261,8 +264,7 @@
     box-sizing: border-box;
     @include text(17px, 18px);
     color: $input-placeholder;
-    outline:none;
-
+    outline: none;
     cursor: pointer;
   }
 
@@ -271,9 +273,19 @@
   }
 }
 
+.order-block__inner {
+  position: relative;
+}
+
 .icon--form {
-  margin-left: -30px;
+  position: absolute;
+  top: 10px;
+  right: 7px;
   fill: $input-placeholder;
+}
+
+.icon--form-email {
+  top: 15px;
 }
 
 .order-block__field:hover + .icon--form {
@@ -292,18 +304,16 @@
 }
 
 .order__btn {
-    margin: 0 auto;
-    width: 260px;
-    background-color: $color-background--lighten;
-    color: $gray;
-    border-color: $gray;
+  margin: 0 auto;
+  width: 260px;
+  background-color: $color-background--lighten;
+  color: $gray;
+  border-color: $gray;
 }
 
-
 @media #{$tablet-widths} {
-
   .order-form {
-    margin-bottom: 45px;
+    margin-bottom: 39px;
 
     &__inner {
       @include container(668px);
@@ -337,8 +347,7 @@
     input[type="radio"] + .order-block__item {
       width: 500px;
       padding-bottom: 16px;
-      @include title(19px,18px)
-      padding-left: 83px;
+      @include title(19px,18px) padding-left: 83px;
     }
 
     input[type="checkbox"] + .order-block__item {
@@ -419,11 +428,11 @@
     }
 
     &__block--mobile {
-      padding: 34px 0px 0px;
+      padding: 34px 0 0;
     }
 
     &__block--email {
-      padding: 11px 0px 49px;
+      padding: 11px 0 49px;
     }
 
     &__title--comment {
@@ -432,7 +441,6 @@
   }
 
   .order-block {
-
     &__item {
       @include title(19px, 19px);
     }
@@ -443,7 +451,7 @@
     }
 
     &__item--color:nth-of-type(even) {
-      padding-right: 0px;
+      padding-right: 0;
       padding-left: 82px;
     }
 
@@ -461,15 +469,14 @@
 
     &__field[type="tel"] {
       background-color: $color-background--darken;
-      width: 565px;
+      width: 500px;
       font-size: 17px;
       padding-left: 20px;
     }
 
     &__field[type="email"] {
-      position: relative;
       background-color: $color-background--darken;
-      width: 565px;
+      width: 500px;
       font-size: 17px;
       padding-left: 20px;
     }
@@ -489,10 +496,18 @@
   .order-note {
     font-size: 17px;
   }
+
+  .icon--form {
+    top: 16px;
+    right: 23px;
+    height: 23px;
+  }
+
+  .icon--form-email {
+    height: 30px;
+  }
 }
-
 @media #{$desktop-widths} {
-
   .order-form {
     margin-bottom: 32px;
 
@@ -523,7 +538,7 @@
     }
 
     input[type="radio"] + label::before {
-      left: 0px;
+      left: 0;
       top: 6px;
     }
 
@@ -537,26 +552,25 @@
       padding-left: 90px;
     }
 
-      &__group input[type="checkbox"] + label::before {
-        left: 2px;
-        top: 10px;
-      }
+    &__group input[type="checkbox"] + label::before {
+      left: 2px;
+      top: 10px;
+    }
 
-      &__group input[type="checkbox"] + label:nth-of-type(2n)::before {
-        left: 2px;
-      }
+    &__group input[type="checkbox"] + label:nth-of-type(2n)::before {
+      left: 2px;
+    }
 
-      &__group input[type="checkbox"]:checked + label::after {
-        left: 20px;
-      }
+    &__group input[type="checkbox"]:checked + label::after {
+      left: 20px;
+    }
 
-      &__group input[type="checkbox"]:checked + label:nth-of-type(2n)::after {
-        left: 20px;
-      }
+    &__group input[type="checkbox"]:checked + label:nth-of-type(2n)::after {
+      left: 20px;
+    }
 
     &__add {
       @include container(700px);
-
     }
   }
 

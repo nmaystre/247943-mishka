@@ -95,7 +95,7 @@ ui: false
 });
 
 gulp.watch("sass/**/*.{scss,sass}", ["style"]);
-gulp.watch("*.html").on("change", server.reload);
+gulp.watch("*.html", ["html:copy", server.reload]);
 gulp.watch("js/**/*.js",["js"]);
 });
 

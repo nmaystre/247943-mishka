@@ -11,6 +11,15 @@
 
   &__logo {
     display: none;
+    cursor: pointer;
+  }
+
+  &__logo:hover .icon--logo-footer {
+    fill: $color-primary;
+  }
+
+  &__logo:active .icon--logo-footer {
+    fill: rgba($color-primary, 0.5);
   }
 }
 
@@ -20,10 +29,10 @@
   align-items: center;
   width: 100%;
   @include border-bottom;
-  padding: 24px 42px 24px;
+  padding: 24px 42px;
 
   &__link {
-  font-size: 0px;
+    font-size: 0;
   }
 }
 
@@ -34,6 +43,7 @@
 .social__link:active .icon--social {
   fill: rgba($color-primary, 0.5);
 }
+
 
 .copyright {
   display: flex;
@@ -50,31 +60,36 @@
     @include title (18px, 19px);
   }
 
+  .icon--copyright {
+    fill: $color-primary;
+  }
+
   &__link {
-    font-size: 0px;
+    font-size: 0;
     padding-left: 30px;
   }
-}
 
+  &:hover .icon--copyright {
+    fill: $color-secondary--lighten;
+  }
 
+  &:active .icon--copyright {
+    fill: rgba($color-secondary--lighten, 0.3);
+  }
 
-.copyright__link:hover  .icon--copyright {
-  fill: $color-secondary--lighten;
-}
-
-.copyright__link:active  .icon--copyright {
-  fill: rgba($color-secondary--lighten, 0.3);
+  &:active p {
+    color: rgba($gray--darkest, 0.3);
+  }
 }
 
 
 @media #{$tablet-widths} {
   .page-footer {
-
     &__inner {
       @include container(668px);
       align-items: center;
       justify-content: space-between;
-      padding-top: 35px;
+      padding-top: 30px;
       padding-bottom: 35px;
     }
 
@@ -88,7 +103,7 @@
   }
 
   .social {
-    width: 150px;
+    width: 180px;
     margin: auto;
     padding: 0;
     border: none;
@@ -98,11 +113,10 @@
     width: 185px;
   }
 }
-
 @media #{$desktop-widths} {
   .page-footer {
-
     &__inner {
+      padding-top: 35px;
       @include container(1050px);
     }
   }

@@ -1,4 +1,3 @@
-
 .production {
   @include container(260px);
   @include border;
@@ -29,39 +28,37 @@
   @include title (17px, 24px);
   text-align: left;
   cursor: pointer;
-  }
+}
 
 .production-video {
   position: relative;
 }
 
 .production-videoicon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 105px;
+  height: 80px;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  background-image: url("../img/icons/icon-play.svg");
+  background-repeat: no-repeat;
+  transition: transform 0.1s;
 
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 105px;
-    height: 80px;
-    transform: translate(-50%,-50%);
-    cursor: pointer;
-    background-image: url(../img/icons/icon-play.svg);
-    background-repeat: no-repeat;
-    transition: transform .1s;
-
-
-    &:hover {
+  &:hover {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%) scale(1.2);
-    }
+  }
 
-    &:active {
+  &:active {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%) scale(0.8);
     opacity: 0.6;
-    }
   }
+}
 
 .icon--video {
   fill: $color-primary;
@@ -73,13 +70,11 @@
   fill: $color-primary;
 }
 
-
-
 .production-description {
   @include text(13px, 24px);
   text-align: left;
   width: 192px;
-  padding: 21px 0px 26px;
+  padding: 21px 0 26px;
   margin: 0;
 }
 
@@ -91,9 +86,7 @@
   @include shadow--down;
 }
 
-
 @media #{$tablet-widths} {
-
   .production {
     @include container(668px);
     padding-bottom: 45px;
@@ -136,9 +129,7 @@
     padding: 15px;
   }
 }
-
 @media #{$desktop-widths} {
-
   .production {
     position: relative;
     @include container(1050px);
@@ -147,8 +138,8 @@
     height: 455px;
     box-sizing: border-box;
     padding-left: 700px;
-    padding-bottom: 0px;
-    margin-bottom: 105px;
+    padding-bottom: 0;
+    margin-bottom: 100px;
   }
 
   .production-title {
@@ -172,7 +163,7 @@
 
   .production-process {
     width: 230px;
-    padding: 24px 50px 17px 0px;
+    padding: 24px 50px 17px 0;
   }
 
   .production-description {

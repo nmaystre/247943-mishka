@@ -21,7 +21,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 @media #{$tablet-widths} {
   h1 {
     @include title (43px, 50px);
@@ -35,17 +34,16 @@ img {
     @include text (17px, 30px);
   }
 }
-
-  @media #{$desktop-widths} {
-    h1 {
-      @include title (53px, 57px);
-    }
-
-    h2 {
-      @include title (53px, 57px);
-    }
+@media #{$desktop-widths} {
+  h1 {
+    @include title (53px, 57px);
   }
 
-  .visually-hidden {
-    display: none;
+  h2 {
+    @include title (53px, 57px);
   }
+}
+
+.visually-hidden {
+  display: none;
+}

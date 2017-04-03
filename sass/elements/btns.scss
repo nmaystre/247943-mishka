@@ -5,13 +5,11 @@
   text-transform: uppercase;
   @include center;
   border: 2px solid $gray--darkest;
-
   font-family: "opensansbold", sans-serif;
   font-weight: bold;
   font-size: 17px;
   line-height: 20px;
   color: #000000;
-
   cursor: pointer;
 }
 
@@ -19,7 +17,6 @@
   background-color: $gray;
   border-color: $gray;
   color: $color-background--lighten;
-
   cursor: pointer;
 }
 
