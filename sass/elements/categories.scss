@@ -38,7 +38,8 @@
 
   &__link {
     display: inline-block;
-    width: 210px;
+    vertical-align: middle;
+    width: 150px;
     padding: 27px 0 28px 30px;
     color: #ffffff;
     text-decoration: none;
@@ -52,15 +53,12 @@
     color: $color-secondary--lightest;
   }
 }
-/* как тут обойтись без br?
-Я не совсем поняла про вставку картинок к будущем.(((
-Они будут как блочно-строчные элементы?
-Тогда вроде нужна будет общая обертка для картинки и текста?*/
+
 .icon--category {
   width: 70px;
   height: 65px;
   fill: rgba($main-category, 0.9);
-  padding: 23px 30px 0;
+  padding: 19px 20px 0 40px;
 }
 
 .category__item:hover .icon--category {
@@ -77,7 +75,7 @@
 
     &::after {
       @include zigzag-fill(22px);
-      bottom: -15px;
+      bottom: -13px;
     }
   }
 
@@ -107,25 +105,29 @@
     height: 65px;
     padding-left: 0;
     padding-top: 30px;
+    padding-right: 30px;
   }
 }
 @media #{$desktop-widths} {
   .category {
     @include container(1050px);
 
+
     &__item {
       min-width: 525px;
       box-sizing: border-box;
+      justify-content: space-between;
     }
 
     &__link {
-      width: 100%;
-      box-sizing: border-box;
+      padding-left: 42px;
+
+
     }
   }
 
   .icon--category {
-    padding-right: 15px;
+    padding-right: 0px;
   }
 
   .icon--category--toy {
