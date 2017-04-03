@@ -2,7 +2,7 @@
 
 .contacts {
   padding-top: 20px;
-  padding-bottom: 45px;
+  padding-bottom: 40px;
 
   &__inner {
     @include container(260px);
@@ -32,7 +32,7 @@
 
   &__field {
     @include reset;
-    padding-right: 28px;
+    padding-right: 32px;
   }
 
   &__link {
@@ -43,6 +43,7 @@
 
   &__link::after {
     @include underline (0px, 1px, $color-primary);
+    bottom: -4px;
   }
 
   &__link:hover {
@@ -65,21 +66,33 @@
   }
 
   &__map {
-    padding-bottom: 30px;
+    position: relative;
     width: 100%;
     text-align: center;
   }
 
-  &__map--pic {
-    margin: 0 auto;
-    width: 320px;
-    height: auto;
-    padding-bottom: 38px;
+  &__picture--static::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+
+    height: 100px;
+    width: 70px;
+    margin-left: -35px;
+    margin-top: -60px;
+    background-image: url(../img/icon-map-pin.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__picture--iframe {
+  min-height: 450px;
   }
 
   &__btn {
     width: 260px;
-    margin: 0 auto;
+    margin: 42px auto 0;
     box-sizing: border-box;
   }
 }
@@ -87,15 +100,16 @@
 
 @media #{$tablet-widths} {
   .contacts {
-    padding-bottom: 55px;
+    padding-bottom: 58px;
 
     &__inner {
       @include container(668px);
+      margin-bottom: 28px;
     }
 
     &__title {
       padding-top: 45px;
-      padding-bottom: 45px;
+      padding-bottom: 49px;
     }
 
     &__subtitle {
@@ -107,7 +121,7 @@
       position: absolute;
       content: "";
       top: -13px;
-      right: 0px;
+      right: 2px;
       width: 0;
   	  height: 0;
   	  border-top: 20px solid transparent;
@@ -119,7 +133,7 @@
       position: absolute;
       content: "";
       top: -15px;
-      right: 40px;
+      right: 47px;
       width: 4px;
   	  height: 80px;
   	  background-color: $gray--darkest;
@@ -133,6 +147,11 @@
     &__item {
       width: 50%;
       @include text(17px, 30px);
+      padding-bottom: 0;
+    }
+
+    &__field {
+      padding-right: 25px;
     }
 
     &__text {
@@ -140,7 +159,16 @@
     }
 
     &__map {
-      padding-bottom: 45px;
+      margin-bottom: 57px;
+
+      img {
+        width: 768px;
+        height: auto;
+      }
+
+      &__picture--iframe {
+      min-height: 452px;
+      }
     }
 
     &__btn {
@@ -151,10 +179,12 @@
 
 @media #{$desktop-widths} {
   .contacts {
-    padding-bottom: 110px;
+    @include container(1050px);
+    position: relative;
+    padding-bottom: 107px;
+    padding-top: 12px;
 
     &__inner {
-      position: relative;
       @include container(1050px);
       display: flex;
       flex-direction: column;
@@ -196,18 +226,24 @@
 
     &__item {
       width: 350px;
+      padding-bottom: 30px;
     }
 
     &__map {
       position: absolute;
-      top: 55px;
-      right: 0px;
+      top: 70px;
+      left: 50%;
       width: 50%;
     }
 
     &__btn {
+      align-self: center;
       margin: 0px;
-      margin-left: 180px;
+      margin-left: 174px;
     }
+  }
+
+  .contacts__link::after {
+    bottom: 0;
   }
 }

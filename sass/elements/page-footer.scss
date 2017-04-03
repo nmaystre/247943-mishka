@@ -20,11 +20,19 @@
   align-items: center;
   width: 100%;
   @include border-bottom;
-  padding: 20px 42px 30px;
+  padding: 24px 42px 24px;
 
   &__link {
   font-size: 0px;
   }
+}
+
+.social__link:hover .icon--social {
+  fill: $color-primary;
+}
+
+.social__link:active .icon--social {
+  fill: rgba($color-primary, 0.5);
 }
 
 .copyright {
@@ -44,8 +52,20 @@
 
   &__link {
     font-size: 0px;
+    padding-left: 30px;
   }
 }
+
+
+
+.copyright__link:hover  .icon--copyright {
+  fill: $color-secondary--lighten;
+}
+
+.copyright__link:active  .icon--copyright {
+  fill: rgba($color-secondary--lighten, 0.3);
+}
+
 
 @media #{$tablet-widths} {
   .page-footer {
@@ -62,7 +82,7 @@
       display: block;
       margin: 0;
       padding: 0;
-      width: 185px;
+      width: 180px;
       text-align: left;
     }
   }

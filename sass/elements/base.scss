@@ -45,3 +45,7 @@ img {
       @include title (53px, 57px);
     }
   }
+
+  .visually-hidden {
+    display: none;
+  }

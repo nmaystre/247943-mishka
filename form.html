@@ -5,18 +5,26 @@
     <meta name= "viewport" content= "width=device-width, initial-scale=1.0" >
     <title>Мишка: вязание на заказ</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+    <script>
+    // Picture element HTML5 shiv
+    document.createElement( "picture" );
+  </script>
+  <script src="js/picturefill.js" async></script>
   </head>
   <body>
     <header class="page-header">
       <nav class="main-nav main-nav--closed main-nav--nojs">
         <button class="main-nav__toggle" type="button">Открыть меню</button>
-        <ul class="main-nav__list">
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__list">
           <li class="main-nav__item main-nav__item--logo">
             <a href="index.html" class="main-nav__link">
-              <svg class="icon icon--logo" width="170px" height="85px">
-                <use class="icon--logo-s" xlink:href="#icon-logo-s" ></use>
-                <use class="icon--logo-m" xlink:href="#icon-logo-m" ></use>
-                <use class="icon--logo-l" xlink:href="#icon-logo-l" ></use>
+              <svg class="icon icon--logo" width="170" height="85">
+                <use class="icon--logo-s" xlink:href="img/symbols.svg#icon-logo-s" ></use>
+                <use class="icon--logo-m" xlink:href="img/symbols.svg#icon-logo-m" ></use>
+                <use class="icon--logo-l" xlink:href="img/symbols.svg#icon-logo-l" ></use>
               </svg>
             </a>
           </li>
@@ -31,22 +39,17 @@
             </a>
           </li>
           <li class="main-nav__item main-nav__search">
-            <svg class="icon icon--search" width="20px" height="20px">
-              <use class="icon--search" xlink:href="#icon-search" ></use>
+            <svg class="icon icon--search main-nav__isearch" width="20" height="20">
+              <use class="icon--search" xlink:href="img/symbols.svg#icon-search" ></use>
             </svg>
             <a href="#" class="main-nav__link main-nav__link--search">
               Поиск по сайту
             </a>
-          <!--
-            <form class="main-nav__search">
-              <input type="search" name="search" placeholder="Поиск по сайту" required>
-              <button type="submit"></button>
-            </form>
-          !-->
           </li>
+
           <li class="main-nav__item main-nav__cart">
-            <svg class="icon icon--cart" width="20px" height="20px">
-              <use class="icon--cart" xlink:href="#icon-cart" ></use>
+            <svg class="icon icon--cart main-nav__icart" width="20" height="20">
+              <use class="icon--cart" xlink:href="img/symbols.svg#icon-cart" ></use>
             </svg>
             <a class="main-nav__link main-nav__link--cart" href="#">
               Корзина: <span>пока пуста</span>
@@ -63,8 +66,9 @@
             </a>
           </li>
         </ul>
+        </div>
       </nav>
-      <div class="intro">
+      <div class="intro intro--decorated">
         <p class="intro__delivery">Бесплатная доставка по России</p>
         <h1 class="intro__title">Вязание на заказ</h1>
       </div>
@@ -125,12 +129,18 @@
             <div class="order-form__inner order-form__inner--mobile">
               <h2 class="order-form__title order-form__title--mobile">Тел</h2>
               <input class="order-block__field" type="tel" placeholder="+7 XXX XXX XX XX" name="mobile" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+              <svg class="icon icon--form icon--form-tel" width="30" height="30">
+                <use class="icon-phone" xlink:href="img/symbols.svg#icon-phone"></use>
+              </svg>
             </div>
         </fieldset>
         <fieldset class="order-form__block order-form__block--email order-form__block--darken">
           <div class="order-form__inner">
-            <h2 class="order-form__title order-form__title--email">Email</h2>
+            <h2 class="order-form__title order-form__title--email">E-mail</h2>
               <input class="order-block__field" type="email" placeholder="Ваш Email" name="email" required>
+              <svg class="icon icon--form icon--form-email" width="30" height="30">
+                <use class="icon-mail" xlink:href="img/symbols.svg#icon-mail"></use>
+              </svg>
             </div>
         </fieldset>
         <fieldset class="order-form__block">
@@ -148,27 +158,27 @@
     <footer class="page-footer">
       <div class="page-footer__inner">
         <div class="page-footer__logo">
-          <svg class="icon icon--logo-footer" width="105px" height="40px">
-            <use class="icon--logo-s" xlink:href="#icon-logo-s"></use>
+          <svg class="icon icon--logo-footer" width="105" height="40">
+            <use xlink:href="img/symbols.svg#icon-logo-s"></use>
           </svg>
         </div>
         <section class="social">
           <a href="#" class="social__link social__link--in">
             Мы в Instagram
-            <svg class="icon icon--social" width="30px" height="30px">
-              <use class="icon--social-in" xlink:href="#icon-social-in"></use>
+            <svg class="icon icon--social" width="30" height="30">
+              <use class="icon--social-in" xlink:href="img/symbols.svg#icon-insta"></use>
             </svg>
           </a>
           <a href="#" class="social__link social__link--fb">
             Мы в Facebook
-            <svg class="icon icon--social" width="30px" height="30px">
-              <use class="icon--social-fb" xlink:href="#icon-social-fb"></use>
+            <svg class="icon icon--social" width="30" height="30">
+              <use class="icon--social-fb" xlink:href="img/symbols.svg#icon-fb"></use>
             </svg>
             </a>
           <a href="#" class="social__link social__link--tw">
             Мы в Twitter
-            <svg class="icon icon--social" width="30px" height="30px">
-              <use class="icon--social-tw" xlink:href="#icon-social-tw"></use>
+            <svg class="icon icon--social" width="30" height="30">
+              <use class="icon--social-tw" xlink:href="img/symbols.svg#icon-twitter"></use>
             </svg>
             </a>
         </section>
@@ -176,13 +186,14 @@
           <p>
             Разработано
             <a href="#" class="copyright__link">в HTML Academy
-              <svg class="icon icon--copyright" width="30px" height="35px">
-                <use xlink:href="#icon-copyright"></use>
+              <svg class="icon icon--copyright" width="30" height="35">
+                <use xlink:href="img/symbols.svg#htmlacademy"></use>
               </svg>
               </a>
           </p>
         </section>
       </div>
     </footer>
+    <script src="js/script.js" type="text/javascript"></script>
   </body>
 </html>

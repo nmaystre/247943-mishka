@@ -73,5 +73,34 @@
 
 @mixin shadow--down {
   box-shadow: 0 4px 3px 0 $gray--lightest;
+}
 
+@mixin zigzag-fill ($zig-height) {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0px;
+  height: $zig-height;
+  width: 100%;
+
+  background-image: url(/img/bg-zigzag-fill.svg);
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  z-index: 1;
+}
+
+@mixin zigzag-line ($zig-height) {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0px;
+
+  height: $zig-height;
+  width: 100%;
+  background-image: url(/img/bg-zigzag-line.svg);
+  background-size: auto $zig-height;
+  background-position: center;
+  background-repeat: repeat-x;
+  z-index: 1;
 }

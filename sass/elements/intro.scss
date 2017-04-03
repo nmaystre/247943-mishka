@@ -2,7 +2,6 @@
   width: 100%;
   min-height: 177px;
   background-color: $color-background--darken;
-  @include border-top;
   overflow: hidden;
   vertical-align: middle;
 
@@ -13,15 +12,15 @@
   }
 
   &--index {
-    min-height: 280px;
+    min-height: 282px;
     background-color: $color-background--middle;
     background-image: url(../img/hero-mobile@1x.jpg);
     background-position: 50% 20%;
     background-repeat: no-repeat;
+    background-size: 570px auto;
 
     @media #{$retina} {
       background-image: url(../img/hero-mobile@2x.jpg);
-      background-size: 580px auto;
     }
   }
 
@@ -35,28 +34,35 @@
 @media #{$tablet-widths} {
 
   .intro {
-    min-height: 227px;
+    position: relative;
+    min-height: 237px;
     margin-top: -68px;
+    @include border-top;
+
+    &--decorated::after {
+      @include zigzag-fill(22px);
+    }
 
     &__title {
     @include title(43px, 50px);
     padding-top: 55px;
     @include container(668px);
-  }
+    }
 
-  &__title--index {
-    padding-top: 110px;
-  }
+    &__title--index {
+      padding-top: 110px;
+    }
 
     &--index {
       min-height: 625px;
+      background-image: url(../img/hero-desktop@1x.jpg);
       background-color: $color-background--middle;
       background-position: 50% 0%;
-      background-size: 1150px;
-      /* а что, для планшета не будет графики? */
+      background-size: 1140px auto;
+
 
       @media #{$retina} {
-        background-image: url(../img/hero-desktop@1x.jpg);
+        background-image: url(../img/hero-desktop@2x.jpg);
       }
     }
 
@@ -74,22 +80,32 @@
 @media #{$desktop-widths} {
 
   .intro {
-    min-height: 250px;
-    margin-top: -63px;
+    min-height: 270px;
+    margin-top: -45px;
+
+    &--decorated::after {
+      height: 30px;
+    }
 
     &__title {
     @include container(1050px);
     max-width: 630px;
     @include title(53px, 57px);
+    padding-top: 55px;
   }
 
     &--index {
-      min-height: 630px;
-      background-image: url(../img/hero-desktop@1x.jpg);
+    min-height: 630px;
+    background-image: url(../img/hero-desktop@1x.jpg);
 
-      @media #{$retina} {
-        background-image: url(../img/hero-desktop@2x.jpg);
-      }
+
+    @media #{$retina} {
+    background-image: url(../img/hero-desktop@2x.jpg);
+  }
+}
+
+    &__title--index {
+      padding-top: 115px;
     }
 
     &__delivery {

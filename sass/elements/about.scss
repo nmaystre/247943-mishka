@@ -9,7 +9,7 @@
   &__title {
     @include title (25px, 30px);
     @include reset;
-    padding-bottom: 0px;
+    padding-bottom: 3px;
   }
 
   &__list {
@@ -18,7 +18,7 @@
   }
 
   &__item {
-    padding-top: 30px;
+    padding-top: 28px;
     @include title (17px, 20px);
 
     br {
@@ -31,7 +31,7 @@
 @media #{$tablet-widths} {
 
   .about {
-    padding-top: 55px;
+    padding-top: 50px;
 
     &__inner {
       @include container(668px);
@@ -39,6 +39,7 @@
 
     &__title {
       @include title (43px, 50px);
+      padding-bottom: 0;
     }
 
     &__list {
@@ -47,7 +48,7 @@
     }
 
     &__item {
-      padding-top: 50px;
+      padding-top: 53px;
       @include title(20px, 22px);
       width: 50%;
     }
@@ -67,7 +68,7 @@
 @media #{$desktop-widths} {
 
   .about {
-    padding-top: 70px;
+    padding-top: 55px;
 
     &__inner {
       @include container(700px);

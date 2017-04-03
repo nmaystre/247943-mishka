@@ -14,14 +14,66 @@
   }
 }
 
+.production-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 29px;
+}
+
 .production-process {
   margin: 0;
   padding-top: 26px;
-  padding-left: 90px;
-  padding-bottom: 20px;
+  padding-left: 19px;
+  padding-bottom: 23px;
   @include title (17px, 24px);
   text-align: left;
+  cursor: pointer;
   }
+
+.production-video {
+  position: relative;
+}
+
+.production-videoicon {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 105px;
+    height: 80px;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    background-image: url(../img/icons/icon-play.svg);
+    background-repeat: no-repeat;
+    transition: transform .1s;
+
+
+    &:hover {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1.2);
+    }
+
+    &:active {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0.8);
+    opacity: 0.6;
+    }
+  }
+
+.icon--video {
+  fill: $color-primary;
+  width: 53px;
+  height: auto;
+}
+
+.production-icon {
+  fill: $color-primary;
+}
+
+
 
 .production-description {
   @include text(13px, 24px);
@@ -48,26 +100,34 @@
     margin-bottom: 63px;
   }
 
+  .production-title {
+    padding-left: 60px;
+    padding-top: 15px;
+  }
+
   .production-process {
     @include title (20px, 24px);
     width: 590px;
-    padding-top: 43px;
-    padding-left: 105px;
-    padding-bottom: 13px;
   }
 
-  video {
+  .production-video {
     width: 100%;
     height: 447px;
     order: -1;
     @include border-bottom;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .production-description {
     width: 590px;
     margin: 0;
     @include text (15px,30px);
-    padding-bottom: 30px;
+    padding-bottom: 33px;
+    padding-top: 10px;
   }
 
   .production__btn {
@@ -91,21 +151,28 @@
     margin-bottom: 105px;
   }
 
-  video {
+  .production-title {
+    padding-left: 60px;
+    padding-top: 39px;
+    flex-wrap: wrap;
+  }
+
+  .icon--video {
+    width: 40px;
+  }
+
+  .production-video {
     position: absolute;
     content: "";
     top: 0;
     left: 0;
-
     width: 680px;
     padding: 0;
   }
 
   .production-process {
     width: 230px;
-    padding-top: 95px;
-    padding-left: 0px;
-    padding-bottom: 0px;
+    padding: 24px 50px 17px 0px;
   }
 
   .production-description {
@@ -115,6 +182,6 @@
 
   .production__btn {
     width: 230px;
-    margin-bottom: 55px;
+    margin-bottom: 50px;
   }
 }

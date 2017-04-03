@@ -11,7 +11,8 @@
   margin-bottom: 28px;
 
   &__description {
-    padding: 17px 25px 21px 27px;
+    width: 100%;
+    padding: 20px 25px 29px 27px;
     cursor: pointer;
   }
 
@@ -46,6 +47,10 @@
   &__buy {
     font-size: 0;
   }
+
+  .icon--cart {
+    margin-right: 0;
+  }
 }
 
 .catalog-item:hover {
@@ -72,6 +77,14 @@
         order: -1;
         width: 334px;
         height: 334px;
+
+        cursor: pointer;
+
+
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
 
       &__description {
@@ -81,7 +94,7 @@
         flex: 1;
         justify-content: space-between;
         align-items: flex-start;
-
+        padding: 16px 25px 26px 27px;
       }
 
       &__description-header {
@@ -103,6 +116,11 @@
 
       &__price {
         @include title(17px, 20px);
+        padding-left: 5px;
+      }
+
+      &__buy {
+        padding-right: 5px;
       }
   }
 }
@@ -113,13 +131,14 @@
     @include container(1050px);
     display: flex;
     flex-wrap: wrap;
-    padding-top: 125px;
+    padding-top: 117px;
   }
 
   .catalog-item {
     width: 315px;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-bottom: 60px;
 
     &__link {
       width: auto;
